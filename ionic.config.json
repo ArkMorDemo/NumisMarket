@@ -1,0 +1,7 @@
+{
+  "name": "NumisMarket",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
