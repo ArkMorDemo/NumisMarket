@@ -1,0 +1,83 @@
+ion-header {
+  background-color: #000000;
+}
+
+ion-toolbar {
+  padding: 0 !important;
+  background-color: #000000;
+  --background: #000000;
+  --border-color: rgba(255, 255, 255, 0.1);
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  padding: 0 16px;
+  gap: 10px;
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+ion-title {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  color: #EFB810;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+ion-buttons {
+  display: flex;
+  gap: 0;
+  flex: 0 0 auto;
+}
+
+ion-button {
+  color: #EFB810;
+  transition: all 0.3s ease;
+
+  &.active {
+    color: #EFB810;
+    font-weight: 600;
+    border-bottom: 3px solid #EFB810;
+  }
+
+  &:hover {
+    color: #EFB810;
+    border-bottom: 3px solid #EFB810;
+  }
+}
+
+/* Login Button - No background, default text color */
+.login-btn {
+   
+  &:hover {
+    --background: #d4a00e;
+    border: none;
+  }
+}
+
+/* Register Button - Golden background, black text */
+.register-btn {
+  font-weight: bold;
+  &:hover {
+    --background: #d4a00e;
+    border: none;
+  }
+}
+
+.icon-img-title {
+  width: 30px;
+}

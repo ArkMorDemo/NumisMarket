@@ -8,7 +8,11 @@ import { AppComponent } from './app/app.component';
 bootstrapApplication(AppComponent, {
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    provideIonicAngular(),
+    provideIonicAngular({
+      // Configure default animation
+      animated: false,
+      mode: 'md', // Material Design mode
+    }),
     provideRouter(routes, withPreloading(PreloadAllModules)),
   ],
-});
+}).catch((err) => console.log(err));

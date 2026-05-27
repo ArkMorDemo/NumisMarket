@@ -1,0 +1,18 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>{{ name }}</ion-card-title>
+  </ion-card-header>
+
+  <img [src]="image" [alt]="name" />
+
+  <ion-card-content>
+    <ul class="qualities-list">
+      <li *ngFor="let quality of qualities">{{ quality }}</li>
+    </ul>
+  </ion-card-content>
+  <div style="width: 100%; display: flex; padding: 10px 0 20px 0;">
+    <ion-button class="toggle-btn" fill="outline" (click)="onButtonClick()">
+      {{ buttonText }}
+    </ion-button>
+  </div>
+</ion-card>

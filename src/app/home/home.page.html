@@ -1,20 +1,47 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header [title]="'NumisMarket'"></app-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div id="container-1">
+    <div id="Box-1"><strong class="a">Onde a história</strong><strong class="b">tem valor</strong><p class="a">Compre, venda e avalie moedas raras de coleção com segurança. Milhares de peças certificadas, de moedas antigas a emissões modernas.</p>
+      <div style="display: flex; gap: 20px;">
+        <ion-button class="button-a">Explorar Catálogo</ion-button>
+        <ion-button fill="outline" class="button-b">Como Funciona</ion-button>
+      </div>
+    </div>
+    <img src="../../assets/img/Coin.png">
   </div>
+  <div id="container-2">
+    <Strong>Peças em <span>Destaque</span></Strong>
+    <div>
+    <div class="cards-grid">
+      <app-card
+        *ngFor="let card of cards"
+        [name]="card.name"
+        [image]="card.image"
+        [qualities]="card.qualities"
+        [buttonText]="card.buttonText"
+        (buttonClicked)="onCardButtonClick(card.name)">
+      </app-card>
+    </div>
+    </div>
+  </div>
+  <div id="container-3">
+    <div style="width: 50%;">
+      <strong>Tem moedas <span>para vender?</span></strong>
+        <p>Alcance milhares de colecionadores sérios em todo o mundo. Comissões transparentes, pagamento rápido e suporte especializado em todas as etapas.</p>
+        <ul>
+          <li>Avaliação gratuita por peritos certificados</li>
+          <li>Fotografias profissionais incluídas no plano Pro</li>
+          <li>Pagamento em 5 dias após a venda</li>
+          <li>Seguro de transporte até € 50.000</li>
+          <li>Parceria com NGC e PCGS para certificação</li>
+        </ul>
+        <div style="display: flex; gap: 20px; padding: 40px 30px 0 30px;">
+          <ion-button class="button-a">Começar a Vender</ion-button>
+          <ion-button fill="outline" class="button-b">Como Funciona</ion-button>
+        </div>
+    </div>
+    <div><img src="" alt=""></div>
+  </div>
+  <app-footer></app-footer>
 </ion-content>

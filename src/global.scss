@@ -35,3 +35,35 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import '@ionic/angular/css/palettes/dark.system.css';
+
+/* Page backgrounds */
+ion-content {
+  --background: #000000;
+}
+
+ion-page {
+  background-color: #000000;
+}
+
+/* Text color for dark background */
+body {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+
+/* Slide from right transition */
+ion-page.slide-right-transition {
+  animation: slideInRight 0.4s ease-in-out;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
