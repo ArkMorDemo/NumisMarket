@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonButton } from '@ionic/angular/standalone';
+import { IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonLabel, IonSelectOption, IonItem } from '@ionic/angular/standalone';
 import { HeaderComponent } from 'src/app/components/header/header.component';
 import { FooterComponent } from '../components/footer/footer.component';
 
@@ -10,7 +10,7 @@ import { FooterComponent } from '../components/footer/footer.component';
   templateUrl: './catalog.page.html',
   styleUrls: ['./catalog.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, HeaderComponent, FooterComponent, IonButton,]
+  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, HeaderComponent, FooterComponent, IonButton, IonLabel, IonSelectOption, IonItem]
 })
 export class CatalogPage {
   selectedPO: string = '';
@@ -21,6 +21,7 @@ export class CatalogPage {
     { id: 'eur', name: 'Euro' },
     { id: 'gbp', name: 'British Pound' }
   ];
+coins: any;
 
   onPOChange(event: any) {
     console.log('Coin selected:', event.detail.value);
