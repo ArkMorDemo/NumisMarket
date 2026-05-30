@@ -1,0 +1,46 @@
+<app-header title="Entrar"></app-header>
+
+<ion-content [fullscreen]="true" class="login-content">
+  <div class="login-wrapper">
+    <div class="login-card">
+      <h1 class="title">Entrar na conta</h1>
+
+      <form (ngSubmit)="entrar()">
+
+        <div class="form-group">
+          <label class="label">Email</label>
+          <input
+            type="email"
+            name="email"
+            [(ngModel)]="email"
+            placeholder="Inserir o nome"
+            class="custom-input"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="label">Senha</label>
+          <input
+            type="password"
+            name="senha"
+            [(ngModel)]="senha"
+            placeholder="Inserir o país"
+            class="custom-input"
+          />
+        </div>
+
+        <div class="button-wrapper">
+          <button type="submit" class="btn-entrar">Entrar</button>
+        </div>
+
+        <div class="signup-wrapper">
+          <a (click)="irParaRegisto()" class="signup-link">
+            Ainda nao conta?
+          </a>
+        </div>
+
+      </form>
+    </div>
+  </div>
+    <app-footer/>
+</ion-content>
