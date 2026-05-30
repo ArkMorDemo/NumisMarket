@@ -17,8 +17,8 @@
         <ion-item>
           <ion-label>Pais de origem</ion-label>
           <ion-select [(ngModel)]="selectedPO" (ionChange)="onPOChange($event)">
-            <ion-select-option *ngFor="let coin of coins" [value]="PO.id">
-              {{ PO.name }}
+            <ion-select-option *ngFor="let coin of coins" [value]="coin.id">
+              {{ coin.name }}
             </ion-select-option>
           </ion-select>
         </ion-item>
