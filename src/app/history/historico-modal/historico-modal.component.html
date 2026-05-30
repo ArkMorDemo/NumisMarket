@@ -1,0 +1,115 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="dark">
+    <ion-title>Histórico de movimentos</ion-title>
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    
+    <ion-buttons slot="end" class="header-action-buttons">
+      <ion-button size="small" class="btn-outline-yellow">
+        <ion-icon slot="start" name="time-outline"></ion-icon>
+        Exportar CSV
+      </ion-button>
+      <ion-button size="small" class="btn-outline-yellow bg-yellow">
+        <ion-icon slot="start" name="funnel-outline"></ion-icon>
+        Filtro
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark" class="ion-padding">
+
+  <div class="stats-grid">
+    <div class="stat-card">
+      <span class="stat-label">Total gasto</span>
+      <span class="stat-value">286,60 €</span>
+      <span class="stat-sub">em 2026</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-label">Compras</span>
+      <span class="stat-value">7</span>
+      <span class="stat-sub">transações</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-label">Trocas</span>
+      <span class="stat-value">3</span>
+      <span class="stat-sub">negociações</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-label">Grupos</span>
+      <span class="stat-value">2</span>
+      <span class="stat-sub">encomendas</span>
+    </div>
+  </div>
+
+  <h2 class="month-title">Abril 2026</h2>
+
+  <div class="movement-card">
+    <div class="card-left">
+      <div class="icon-container icon-gold">
+        <ion-icon name="logo-usd"></ion-icon>
+      </div>
+      <div class="movement-details">
+        <h3>Compra direta — 500 réis 1898 D. Carlos I</h3>
+        <p class="metadata">numismatica_sul · CTT Registado · ref. #C-0091</p>
+        <p class="date">07 abr 2026 · 09:43</p>
+      </div>
+    </div>
+    <div class="card-right">
+      <div class="price-status">
+        <span class="price text-red">- 85,10 €</span>
+        <span class="badge badge-enviado">Enviado</span>
+      </div>
+      <ion-button size="small" class="btn-detail">Detalhe</ion-button>
+    </div>
+  </div>
+
+  <div class="movement-card">
+    <div class="card-left">
+      <div class="icon-container icon-gold">
+        <ion-icon name="swap-horizontal-outline"></ion-icon>
+      </div>
+      <div class="movement-details">
+        <h3>Troca concluída — 500 réis 1895 ⇄ lote Brasil</h3>
+        <p class="metadata">numismatica_sul · CTT Registado · ref. #C-0099</p>
+        <p class="date">02 abr 2026 · 09:43</p>
+      </div>
+    </div>
+    <div class="card-right">
+      <div class="price-status">
+        <span class="price">Troca</span>
+        <span class="badge badge-purple">Sem custo</span>
+      </div>
+      <ion-button size="small" class="btn-detail">Detalhe</ion-button>
+    </div>
+  </div>
+
+  <h2 class="month-title">Mayo 2026</h2>
+
+  <div class="movement-card">
+    <div class="card-left">
+      <div class="icon-container icon-gold">
+        <ion-icon name="cart-outline"></ion-icon>
+      </div>
+      <div class="movement-details">
+        <h3>Grupo de compra — Coleção República</h3>
+        <p class="metadata">numismatica_sul · CTT Registado · ref. #C-0095</p>
+        <p class="date">04 abr 2026 · 09:43</p>
+      </div>
+    </div>
+    <div class="card-right">
+      <div class="price-status">
+        <span class="price text-red">- 60,50 €</span>
+        <span class="badge badge-blue">Grupo</span>
+      </div>
+      <ion-button size="small" class="btn-detail">Detalhe</ion-button>
+    </div>
+  </div>
+
+  <div class="movement-card">
+  </div>
+
+</ion-content>

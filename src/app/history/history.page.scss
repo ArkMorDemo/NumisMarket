@@ -1,0 +1,174 @@
+// Paleta de colores general de la app (puedes meterlo en variables de Ionic)
+:host {
+  --background-dark: #000000;
+  --card-bg: #222222;
+  --text-yellow: #FFCC00;
+  --border-gray: #444444;
+}
+
+ion-content {
+  --background: var(--background-dark);
+}
+
+// Buscador
+.custom-searchbar {
+  --background: #f0f0f0;
+  --border-radius: 20px;
+  padding-inline-start: 10px;
+  padding-inline-end: 10px;
+}
+
+
+// Botón Histórico
+.historico-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+
+  .btn-historico {
+    --background: var(--text-yellow);
+    --color: black;
+    --border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    height: 28px;
+  }
+  
+}
+
+// Títulos de Sección
+.section-title {
+  color: var(--text-yellow);
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 15px 0 10px 5px;
+}
+
+// Estructura de las Tarjetas (Fila Principal)
+.product-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  border: 1px solid var(--border-gray);
+  padding: 12px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  // Opcional: El recuadro azul que tienes seleccionado en la imagen de muestra
+  &.highlighted-border {
+    border: 1.5px dashed #00a2ff;
+  }
+}
+
+// Información del Producto (Lado Izquierdo)
+.product-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+
+  .product-avatar {
+    width: 55px;
+    height: 55px;
+    background: #444;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .details {
+    h3 {
+      color: #ffffff;
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin: 0 0 4px 0;
+    }
+    .subtitle {
+      color: #aaaaaa;
+      font-size: 0.8rem;
+      margin: 0 0 4px 0;
+    }
+    .seller {
+      color: #888888;
+      font-size: 0.75rem;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+
+      .seller-badge {
+        background: #eaaa00;
+        color: black;
+        font-weight: bold;
+        font-size: 0.6rem;
+        padding: 1px 4px;
+        border-radius: 4px;
+      }
+    }
+  }
+}
+
+// Acciones y Precios (Lado Derecho)
+.product-actions {
+  display: flex;
+  align-items: flex-end;
+  gap: 15px;
+
+  .price-status {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+
+    .price {
+      color: #ffffff;
+      font-weight: bold;
+      font-size: 0.95rem;
+    }
+
+    // Badges de Estados
+    .status-badge {
+      font-size: 0.7rem;
+      font-weight: bold;
+      padding: 3px 8px;
+      border-radius: 10px;
+      text-transform: capitalize;
+
+      &.status-enviado {
+        background-color: rgba(214, 90, 49, 0.2);
+        color: #d65a31;
+      }
+      &.status-entregue {
+        background-color: rgba(40, 167, 69, 0.2);
+        color: #28a745;
+      }
+      &.status-aguardar {
+        background-color: rgba(160, 100, 70, 0.2);
+        color: #cd7f32;
+      }
+    }
+  }
+
+  // Botones de acción verticales
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    .btn-dark {
+      --background: #111111;
+      --color: #ffffff;
+      --border-radius: 8px;
+      --border-color: var(--border-gray);
+      --border-style: solid;
+      --border-width: 1px;
+      font-size: 0.75rem;
+      height: 30px;
+      margin: 0;
+      min-width: 85px;
+    }
+  }
+}
