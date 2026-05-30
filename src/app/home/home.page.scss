@@ -6,7 +6,7 @@
 #container-1 p {
   font-size: 16px;
   line-height: 22px;
-
+  color: var(--ion-color-light);
   margin: 0;
 }
 
@@ -22,6 +22,7 @@
 
 #Box-1 strong.a{
   font-size: 60px;
+  color: var(--ion-color-light);
 }
 
 #Box-1 strong.b{
@@ -57,6 +58,7 @@
   width: 100%;
   display: block;
   text-align: center;
+  color: var(--ion-color-light);
 }
 
 #container-2 span {
@@ -84,11 +86,13 @@
   width: 100%;
   display: block;
   text-align: center;
+  color: var(--ion-color-light);
 }
 
 #container-3 p, li {
   font-size: 20px;
   text-align: justify;
+  color: var(--ion-color-light);
 }
 
 #container-3 span {
