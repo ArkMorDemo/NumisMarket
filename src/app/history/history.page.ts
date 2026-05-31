@@ -25,4 +25,5 @@ export class HistoryPage implements OnInit {
   ngOnInit() {
   }
 
+  
 }

@@ -15,10 +15,10 @@
       Histórico
     </ion-button>
 
-    <ion-modal trigger="open-modal">
+    <ion-modal trigger="open-modal" #modal>
       <ng-template>
         <div class="ion-page">
-          <app-historico-modal></app-historico-modal>
+          <app-historico-modal (fechar)="modal.dismiss()"></app-historico-modal>
         </div>
       </ng-template>
     </ion-modal>
