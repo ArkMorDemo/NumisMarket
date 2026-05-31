@@ -1,5 +1,106 @@
 <app-header [title]="'NumisMarket'"></app-header>
 
 <ion-content [fullscreen]="true">
+  <ion-header class="ion-no-border">
+  <ion-toolbar color="dark">
+    <ion-searchbar placeholder="Buscar producto" class="custom-searchbar"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark" class="ion-padding">
+
+ <div class="historico-container">
+    <ion-button id="open-modal" fill="clear" size="small" class="btn-historico">
+      <ion-icon name="time-outline" slot="start"></ion-icon>
+      Histórico
+    </ion-button>
+
+    <ion-modal trigger="open-modal">
+      <ng-template>
+        <div class="ion-page">
+          <app-historico-modal></app-historico-modal>
+        </div>
+      </ng-template>
+    </ion-modal>
+  </div>
+
+  <h2 class="section-title">Em curso</h2>
+  
+  <div class="product-card highlighted-border"> 
+    <div class="product-info">
+      <ion-avatar slot="start" class="product-avatar">
+        <img src="assets/coin.png" alt="Coin" />
+      </ion-avatar>
+      <div class="details">
+        <h3>500 réis 1898 — D. Carlos I</h3>
+        <p class="subtitle">Prata - Estado MBC</p>
+        <p class="seller"><span class="seller-badge">NS</span> Prata - Estado MBC</p>
+      </div>
+    </div>
+    
+    <div class="product-actions">
+      <div class="price-status">
+        <span class="price">80,00 €</span>
+        <span class="status-badge status-enviado">Enviado</span>
+      </div>
+      <div class="buttons">
+        <ion-button size="small" fill="solid" class="btn-dark">Detalhe</ion-button>
+        <ion-button size="small" fill="solid" class="btn-dark">Contactar</ion-button>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title">Conluídas</h2>
+
+  <div class="product-card" *ngFor="let item of [1, 2]">
+    <div class="product-info">
+      <ion-avatar class="product-avatar">
+        <img src="assets/coin.png" alt="Coin" />
+      </ion-avatar>
+      <div class="details">
+        <h3>500 réis 1898 — D. Carlos I</h3>
+        <p class="subtitle">Prata - Estado MBC</p>
+        <p class="seller"><span class="seller-badge">NS</span> Prata - Estado MBC</p>
+      </div>
+    </div>
+    
+    <div class="product-actions">
+      <div class="price-status">
+        <span class="price">80,00 €</span>
+        <span class="status-badge status-entregue">Entregue</span>
+      </div>
+      <div class="buttons">
+        <ion-button size="small" fill="solid" class="btn-dark">Detalhe</ion-button>
+        <ion-button size="small" fill="solid" class="btn-dark">Contactar</ion-button>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title">Grupos</h2>
+
+  <div class="product-card">
+    <div class="product-info">
+      <ion-avatar class="product-avatar">
+        <img src="assets/coin.png" alt="Coin" />
+      </ion-avatar>
+      <div class="details">
+        <h3>500 réis 1898 — D. Carlos I</h3>
+        <p class="subtitle">Prata - Estado MBC</p>
+        <p class="seller"><span class="seller-badge">NS</span> numismatica_sul · última atividade há 3h</p>
+      </div>
+    </div>
+    
+    <div class="product-actions">
+      <div class="price-status">
+        <span class="price">80,00 €</span>
+        <span class="status-badge status-aguardar">Aguardar</span>
+      </div>
+      <div class="buttons">
+        <ion-button size="small" fill="solid" class="btn-dark">Negociar</ion-button>
+      </div>
+    </div>
+  </div>
+
+</ion-content>
   <app-footer/>
 </ion-content>
