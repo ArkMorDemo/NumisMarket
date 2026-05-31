@@ -1,4 +1,4 @@
-// Paleta de colores general de la app (puedes meterlo en variables de Ionic)
+// Paleta de cores geral da app (pode colocar em variáveis do Ionic)
 :host {
   --background-dark: #000000;
   --card-bg: #222222;
@@ -8,9 +8,19 @@
 
 ion-content {
   --background: var(--background-dark);
+
+  // Garante que os eventos de scroll funcionam em toda a área de conteúdo,
+  // independentemente de onde o rato estiver posicionado no ecrã
+  --overflow: auto;
+  pointer-events: auto;
+
+  &::part(scroll) {
+    pointer-events: auto;
+    overflow-y: auto;
+  }
 }
 
-// Buscador
+// Barra de pesquisa
 .custom-searchbar {
   --background: #f0f0f0;
   --border-radius: 20px;
@@ -18,8 +28,7 @@ ion-content {
   padding-inline-end: 10px;
 }
 
-
-// Botón Histórico
+// Botão Histórico
 .historico-container {
   display: flex;
   justify-content: flex-end;
@@ -33,10 +42,9 @@ ion-content {
     font-size: 0.8rem;
     height: 28px;
   }
-  
 }
 
-// Títulos de Sección
+// Títulos de Secção
 .section-title {
   color: var(--text-yellow);
   font-size: 1.1rem;
@@ -44,7 +52,7 @@ ion-content {
   margin: 15px 0 10px 5px;
 }
 
-// Estructura de las Tarjetas (Fila Principal)
+// Estrutura dos Cartões (Linha Principal)
 .product-card {
   background: var(--card-bg);
   border-radius: 16px;
@@ -54,14 +62,14 @@ ion-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
-  // Opcional: El recuadro azul que tienes seleccionado en la imagen de muestra
+
+  // Opcional: borda azul tracejada para cartão em destaque
   &.highlighted-border {
     border: 1.5px dashed #00a2ff;
   }
 }
 
-// Información del Producto (Lado Izquierdo)
+// Informação do Produto (Lado Esquerdo)
 .product-info {
   display: flex;
   align-items: center;
@@ -99,6 +107,7 @@ ion-content {
       align-items: center;
       gap: 5px;
 
+      // Etiqueta/badge do vendedor
       .seller-badge {
         background: #eaaa00;
         color: black;
@@ -111,7 +120,7 @@ ion-content {
   }
 }
 
-// Acciones y Precios (Lado Derecho)
+// Ações e Preços (Lado Direito)
 .product-actions {
   display: flex;
   align-items: flex-end;
@@ -129,7 +138,7 @@ ion-content {
       font-size: 0.95rem;
     }
 
-    // Badges de Estados
+    // Badges de Estado do Pedido
     .status-badge {
       font-size: 0.7rem;
       font-weight: bold;
@@ -152,7 +161,7 @@ ion-content {
     }
   }
 
-  // Botones de acción verticales
+  // Botões de ação verticais
   .buttons {
     display: flex;
     flex-direction: column;
@@ -170,5 +179,15 @@ ion-content {
       margin: 0;
       min-width: 85px;
     }
+  }
+}
+
+ion-content {
+  &::part(scroll) {
+    &::-webkit-scrollbar {
+      display: none; /* Safari y Chrome (Mobile) */
+    }
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE y Edge */
   }
 }
