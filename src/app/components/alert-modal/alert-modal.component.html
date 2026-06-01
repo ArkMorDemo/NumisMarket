@@ -1,0 +1,106 @@
+<p>
+  alert-modal works!
+</p>
+
+<ion-content class="modal-content">
+  <div class="modal-box">
+
+    <!-- Botão X -->
+    <button class="close-btn" (click)="fechar()">
+      <ion-icon name="close"></ion-icon>
+    </button>
+
+    <h1 class="modal-title">Novo alerta de moeda</h1>
+
+    <!-- Nome do alerta -->
+    <div class="field">
+      <label>Nome do alerta</label>
+      <input
+        type="text"
+        class="field-input"
+        placeholder="ex: Moedas prata Portugal"
+        [(ngModel)]="alerta.nome"
+      />
+    </div>
+
+    <!-- Linha 1: País + Tipo -->
+    <div class="row">
+      <div class="field half">
+        <label>Pais de origem</label>
+        <select class="field-input" [(ngModel)]="alerta.pais">
+          <option value="" disabled>ex: Portugal</option>
+          <option *ngFor="let p of paises" [value]="p">{{ p }}</option>
+        </select>
+      </div>
+
+      <div class="field half">
+        <label>Tipo de anúncio</label>
+        <select class="field-input" [(ngModel)]="alerta.tipoAnuncio">
+          <option value="" disabled>ex: Qualquer</option>
+          <option *ngFor="let t of tiposAnuncio" [value]="t">{{ t }}</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Linha 2: Época + Material -->
+    <div class="row">
+      <div class="field half">
+        <label>Época / ano</label>
+        <select class="field-input" [(ngModel)]="alerta.epoca">
+          <option value="" disabled>ex: 1880 - 1920</option>
+          <option *ngFor="let e of epocas" [value]="e">{{ e }}</option>
+        </select>
+      </div>
+
+      <div class="field half">
+        <label>Material</label>
+        <select class="field-input" [(ngModel)]="alerta.material">
+          <option value="" disabled>ex: Qualquer</option>
+          <option *ngFor="let m of materiais" [value]="m">{{ m }}</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Preço -->
+ <!-- Preço -->
+<div class="field">
+  <div class="preco-header">
+    <label>Preço</label>
+    <span class="preco-valor">
+      {{ alerta.precoMin | number }} - {{ alerta.precoMax | number }} (€)
+    </span>
+  </div>
+
+  <ion-range
+    [dualKnobs]="true"
+    min="0"
+    max="1000000"
+    step="1000"
+    [value]="{ lower: alerta.precoMin, upper: alerta.precoMax }"
+    (ionInput)="onPrecoChange($event)"
+    class="preco-slider"
+  ></ion-range>
+</div>
+    <!-- Notificar via -->
+    <div class="field">
+      <label>Notificar via</label>
+      <div class="checks">
+        <label class="check-item">
+          <input type="checkbox" [(ngModel)]="alerta.notificarEmail" />
+          <span>Email</span>
+        </label>
+        <label class="check-item">
+          <input type="checkbox" [(ngModel)]="alerta.notificarSite" />
+          <span>Site</span>
+        </label>
+      </div>
+    </div>
+
+    <!-- Botões -->
+    <div class="actions">
+      <button class="btn btn-cancel" (click)="cancelar()">Cancelar</button>
+      <button class="btn btn-save" (click)="guardar()">Guardar alerta</button>
+    </div>
+
+  </div>
+</ion-content>

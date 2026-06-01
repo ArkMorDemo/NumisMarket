@@ -1,0 +1,159 @@
+.modal-content {
+  --background: rgba(0, 0, 0, 0.85);
+}
+
+.modal-box {
+  position: relative;
+  background: #1a1a1a;
+  border: 2px solid #f5b800;
+  border-radius: 8px;
+  padding: 28px 32px;
+  max-width: 720px;
+  margin: 24px auto;
+  color: #f5b800;
+}
+
+.close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 42px;
+  height: 42px;
+  background: #000;
+  border: 2px solid #f5b800;
+  border-radius: 6px;
+  color: #f5b800;
+  font-size: 22px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-title {
+  color: #fff;
+  font-size: 28px;
+  font-weight: 800;
+  margin: 0 0 24px 0;
+}
+
+.field {
+  margin-bottom: 20px;
+
+  label {
+    display: block;
+    color: #f5b800;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+}
+
+.field-input {
+  width: 100%;
+  height: 44px;
+  background: transparent;
+  border: 1.5px solid #f5b800;
+  border-radius: 4px;
+  padding: 0 12px;
+  color: #fff;
+  font-size: 15px;
+  outline: none;
+
+  &::placeholder {
+    color: rgba(245, 184, 0, 0.45);
+  }
+}
+
+select.field-input {
+  appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, #f5b800 50%),
+    linear-gradient(135deg, #f5b800 50%, transparent 50%);
+  background-position: calc(100% - 18px) 50%, calc(100% - 12px) 50%;
+  background-size: 6px 6px;
+  background-repeat: no-repeat;
+}
+
+.row {
+  display: flex;
+  gap: 16px;
+
+  .half {
+    flex: 1;
+  }
+}
+
+.preco-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .preco-valor {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+  }
+}
+
+.preco-slider {
+  --bar-background: #4a4a4a;
+  --bar-background-active: #f5b800;
+  --knob-background: #f5b800;
+  --bar-height: 4px;
+  --knob-size: 18px;
+  padding: 8px 0;
+}
+
+.checks {
+  display: flex;
+  gap: 48px;
+  margin-top: 4px;
+}
+
+.check-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+
+  input[type="checkbox"] {
+    width: 22px;
+    height: 22px;
+    accent-color: #f5b800;
+    cursor: pointer;
+  }
+
+  span {
+    color: #f5b800;
+    font-size: 16px;
+    font-weight: 600;
+  }
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.btn {
+  background: #000;
+  border: 2px solid #f5b800;
+  border-radius: 24px;
+  padding: 10px 28px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+
+  &:active {
+    transform: scale(0.97);
+  }
+
+  &.btn-save:hover {
+    background: #f5b800;
+    color: #000;
+  }
+}
