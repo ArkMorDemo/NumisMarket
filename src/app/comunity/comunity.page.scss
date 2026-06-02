@@ -1,0 +1,96 @@
+// Definição de cores personalizadas para este ecrã
+:host {
+  --yellow-brand: #e5b611; // Tom de amarelo/ouro da imagem
+  --bg-black: #000000;
+}
+
+// Forçar fundo preto no toolbar e content
+ion-toolbar, ion-content {
+  --background: var(--bg-black);
+  background: var(--bg-black);
+}
+
+// Customização da barra de pesquisa para ficar cinza clara/branca
+.custom-searchbar {
+  --background: #f2f2f2;
+  --color: #333333;
+  --icon-color: #999999;
+  --border-radius: 25px;
+  padding-inline-start: 10px;
+  padding-inline-end: 0;
+}
+
+// Botão de notificação redondo e branco
+.notification-btn {
+  --background: #ffffff;
+  --color: #000000;
+  --border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  margin-right: 12px;
+  position: relative;
+  overflow: visible; // Permite que o ponto amarelo saia ligeiramente do botão
+
+  ion-icon {
+    font-size: 20px;
+  }
+
+  // O ponto amarelo de notificação ativa
+  .yellow-dot {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: 10px;
+    height: 10px;
+    background-color: var(--yellow-brand);
+    border-radius: 50%;
+    border: 1px solid var(--bg-black);
+  }
+}
+
+// Título "Conversations"
+.section-title {
+  color: var(--yellow-brand);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 15px 0 20px 8px;
+}
+
+// Customização da Lista e Itens
+.transparent-list {
+  background: transparent !important;
+}
+
+.chat-item {
+  --background: transparent;
+  --padding-start: 8px;
+  --padding-end: 8px;
+  margin-bottom: 10px;
+
+  // Ícone de utilizador grande e ligeiramente purpurina/branco
+  .avatar-icon {
+    font-size: 45px;
+    color: #e0e0e0; 
+  }
+
+  // Nome do contacto em amarelo
+  .chat-name {
+    color: var(--yellow-brand) !important;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 4px;
+  }
+
+  // Mensagem de suporte em cinza
+  .chat-message {
+    color: #aaaaaa !important;
+    font-size: 0.85rem;
+  }
+
+  // Tempo (10 min) à direita
+  .chat-time {
+    color: #ffffff;
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+}

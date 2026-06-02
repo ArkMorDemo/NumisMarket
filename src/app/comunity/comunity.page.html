@@ -1,5 +1,34 @@
-<app-header [title]="'NumisMarket'"></app-header>
+<app-header [title]="'NumisMarket'">
+  <ion-toolbar color="black-bg">
+    <ion-searchbar 
+      placeholder="Buscar producto" 
+      class="custom-searchbar">
+    </ion-searchbar>
 
-<ion-content [fullscreen]="true">
-  <app-footer/>
+    <ion-buttons slot="end">
+      <ion-button class="notification-btn">
+        <ion-icon slot="icon-only" name="notifications-outline"></ion-icon>
+        <span class="yellow-dot"></span>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</app-header>
+
+<ion-content color="black-bg" class="ion-padding">
+  <h2 class="section-title">Conversations</h2>
+
+  <ion-list lines="none" class="transparent-list">
+    <ion-item *ngFor="let chat of conversations" class="chat-item">
+      <ion-avatar slot="start">
+        <ion-icon name="person-circle-outline" class="avatar-icon"></ion-icon>
+      </ion-avatar>
+
+      <ion-label>
+        <h3 class="chat-name">{{ chat.name }}</h3>
+        <p class="chat-message">{{ chat.message }}</p>
+      </ion-label>
+
+      <span slot="end" class="chat-time">{{ chat.time }}</span>
+    </ion-item>
+  </ion-list>
 </ion-content>

@@ -1,20 +1,55 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { 
+  IonContent, 
+  IonHeader, 
+  IonToolbar, 
+  IonSearchbar, 
+  IonButton, 
+  IonButtons,
+  IonIcon, 
+  IonList, 
+  IonItem, 
+  IonAvatar, 
+  IonLabel, 
+  IonBadge } from '@ionic/angular/standalone';
 import { HeaderComponent } from 'src/app/components/header/header.component';
 import { FooterComponent } from '../components/footer/footer.component';
+import { notificationsOutline, personCircleOutline } from 'ionicons/icons';
+import { addIcons } from 'ionicons';
 
 @Component({
   selector: 'app-comunity',
   templateUrl: './comunity.page.html',
   styleUrls: ['./comunity.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, HeaderComponent, FooterComponent,]
+  imports: [
+    CommonModule,
+    IonContent,
+    IonToolbar,
+    IonSearchbar,
+    IonButton,
+    IonButtons,
+    IonIcon,
+    IonList,
+    IonItem,
+    IonAvatar,
+    IonLabel,
+    HeaderComponent
+]
 })
 export class ComunityPage implements OnInit {
 
-  constructor() { }
+  conversations = Array(7).fill({
+    name: 'Name',
+    message: 'Supporting line text lorem...',
+    time: '10 min'
+  });
+
+  constructor() { 
+    addIcons({ notificationsOutline, personCircleOutline });
+  }
 
   ngOnInit() {
   }
