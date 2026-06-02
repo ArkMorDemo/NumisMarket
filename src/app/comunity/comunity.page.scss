@@ -1,0 +1,126 @@
+/* Definição de cores personalizadas para este ecrã */
+:host {
+  --yellow-brand: #e5b611;
+  --bg-black: #000000;
+}
+
+/* Garante que o cabeçalho, toolbar e content são totalmente pretos */
+ion-header, 
+ion-content {
+  background: var(--bg-black);
+}
+
+ion-toolbar {
+  --background: var(--bg-black);
+  background: var(--bg-black);
+  --padding-top: 8px;
+  --padding-bottom: 8px;
+  --padding-start: 12px;
+  --padding-end: 12px;
+}
+
+/* Container para alinhar a pesquisa e o botão lado a lado */
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 10px;
+}
+
+/* Customização da barra de pesquisa (Fundo claro) */
+.custom-searchbar {
+  --background: #f2f2f2 !important;
+  --color: #333333 !important;
+  --icon-color: #666666 !important; /* Cor da lupa */
+  --placeholder-color: #888888 !important;
+  --border-radius: 25px !important;
+  padding: 0;
+  margin: 0;
+  flex: 1; /* Faz a barra ocupar todo o espaço disponível */
+  height: 44px;
+}
+
+/* Container do botão */
+.new-chat-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Botão de notificação redondo e branco */
+.notification-btn {
+  --background: #ffffff !important;
+  --color: #000000 !important;
+  --border-radius: 50% !important;
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  position: relative;
+  overflow: visible; /* Permite que o ponto amarelo saia ligeiramente do botão */
+
+  ion-icon {
+    font-size: 22px;
+    color: #000000 !important; /* Garante o ícone preto dentro do botão branco */
+  }
+
+  /* O ponto amarelo de notificação ativa */
+  .yellow-dot {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: 10px;
+    height: 10px;
+    background-color: var(--yellow-brand);
+    border-radius: 50%;
+    border: 1px solid var(--bg-black);
+    z-index: 10;
+  }
+}
+
+/* Título "Conversations" */
+.section-title {
+  color: var(--yellow-brand);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 15px 0 20px 8px;
+}
+
+/* Customização da Lista e Itens */
+.transparent-list {
+  background: transparent !important;
+}
+
+.chat-item {
+  --background: transparent;
+  --padding-start: 8px;
+  --padding-end: 8px;
+  margin-bottom: 10px;
+
+  /* Ícone de utilizador grande */
+  .avatar-icon {
+    font-size: 45px;
+    color: #e0e0e0; 
+  }
+
+  /* Nome do contacto em amarelo */
+  .chat-name {
+    color: var(--yellow-brand) !important;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 4px;
+  }
+
+  /* Mensagem de suporte em cinza */
+  .chat-message {
+    color: #aaaaaa !important;
+    font-size: 0.85rem;
+  }
+
+  /* Tempo (10 min) à direita */
+  .chat-time {
+    color: #ffffff;
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+}
