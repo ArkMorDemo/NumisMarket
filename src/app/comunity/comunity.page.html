@@ -1,20 +1,22 @@
-<app-header [title]="'NumisMarket'">
-  <ion-toolbar color="black-bg">
-    <ion-searchbar 
-      placeholder="Buscar producto" 
-      class="custom-searchbar">
-    </ion-searchbar>
-
-    <ion-buttons slot="end">
-      <ion-button class="notification-btn">
-        <ion-icon slot="icon-only" name="notifications-outline"></ion-icon>
-        <span class="yellow-dot"></span>
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-</app-header>
+<app-header [title]="'NumisMarket'"></app-header>
 
 <ion-content color="black-bg" class="ion-padding">
+  
+  <div class="header-container ion-margin-bottom">
+    <ion-searchbar 
+      placeholder="Buscar producto" 
+      class="custom-searchbar"
+      search-icon="search-outline"
+      mode="md">
+    </ion-searchbar>
+
+    <div class="new-chat-container">
+      <ion-button class="notification-btn" fill="clear">
+        <ion-icon slot="icon-only" name="add-outline"></ion-icon>
+      </ion-button>
+    </div>
+  </div>
+
   <h2 class="section-title">Conversations</h2>
 
   <ion-list lines="none" class="transparent-list">
@@ -32,3 +34,6 @@
     </ion-item>
   </ion-list>
 </ion-content>
+
+
+  
