@@ -16,6 +16,7 @@ import {
 import { HeaderComponent } from 'src/app/components/header/header.component';
 import { FooterComponent } from '../components/footer/footer.component';
 import { AlertModalComponent } from '../components/alert-modal/alert-modal.component';
+import { RouterLink } from '@angular/router';   // ⬅️ NOVO
 
 @Component({
   selector: 'app-catalog',
@@ -35,6 +36,7 @@ import { AlertModalComponent } from '../components/alert-modal/alert-modal.compo
     IonLabel,
     IonSelectOption,
     IonItem,
+    RouterLink,
   ],
 })
 export class CatalogPage {

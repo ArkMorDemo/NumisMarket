@@ -9,6 +9,8 @@ import {
 } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { close } from 'ionicons/icons';
+import { RouterLink } from '@angular/router';   // ⬅️ NOVO
+
 
 import { AlertaService, AlertaMoeda } from '../../services/alerta';
 
@@ -23,6 +25,7 @@ import { AlertaService, AlertaMoeda } from '../../services/alerta';
     IonContent,
     IonRange,
     IonIcon,
+    RouterLink,
   ],
 })
 export class AlertModalComponent {

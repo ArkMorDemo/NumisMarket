@@ -1,5 +1,94 @@
-<app-header [title]="'NumisMarket'"></app-header>
+Apaga TUDO do ficheiro (Ctrl+A → Delete) e cola exatamente isto:
 
-<ion-content [fullscreen]="true">
-  <app-footer/>
+<app-header title="NumisMarket"></app-header>
+
+<ion-content class="notify-content">
+
+  <section class="container">
+
+    <header class="top-bar">
+      <h1 class="page-title">Os meus alertas</h1>
+      <button class="btn-criar" (click)="criarAlerta()">
+        <ion-icon name="notifications"></ion-icon>
+        Criar alerta
+      </button>
+    </header>
+
+    <hr class="divider" />
+
+    <nav class="tabs">
+      <button class="tab" [class.active]="abaAtiva === 'alertas'" (click)="abaAtiva = 'alertas'">
+        alertas confirmados
+      </button>
+      <button class="tab" [class.active]="abaAtiva === 'notificacoes'" (click)="abaAtiva = 'notificacoes'">
+        Notificações recebidas
+      </button>
+      <button class="btn-return" (click)="voltar()">
+        <ion-icon name="arrow-undo"></ion-icon>
+        RETURN
+      </button>
+    </nav>
+
+    <ng-container *ngIf="abaAtiva === 'alertas'">
+
+      <h3 class="section-title">ATIVOS</h3>
+
+      <p *ngIf="ativos.length === 0" class="empty">Sem alertas ativos.</p>
+
+      <article *ngFor="let a of ativos" class="alert-card">
+        <ion-icon name="notifications" class="bell"></ion-icon>
+
+        <section class="info">
+          <h2>{{ a.nome }}</h2>
+          <p class="meta">
+            Pais: {{ a.pais }} - Material: {{ a.material }} - Tipo: {{ a.tipoAnuncio }} - Preço: até {{ a.precoMax }} (€)
+          </p>
+          <p class="meta-footer">
+            <span class="data">Criado a {{ formatarData(a.criadoEm) }}</span>
+            <span class="badge">2 correspondências hoje</span>
+          </p>
+        </section>
+
+        <aside class="actions">
+          <ion-toggle [checked]="a.ativo" (ionChange)="toggleAtivo(a)" color="warning"></ion-toggle>
+          <button class="btn-edit" (click)="editar(a)">Editar</button>
+          <button class="btn-remove" (click)="remover(a.id!)">Remover</button>
+        </aside>
+      </article>
+
+      <h3 class="section-title pausados">PAUSADOS</h3>
+
+      <p *ngIf="pausados.length === 0" class="empty">Sem alertas pausados.</p>
+
+      <article *ngFor="let a of pausados" class="alert-card pausado">
+        <ion-icon name="notifications-outline" class="bell"></ion-icon>
+
+        <section class="info">
+          <h2>{{ a.nome }}</h2>
+          <p class="meta">
+            Pais: {{ a.pais }} - Material: {{ a.material }} - Tipo: {{ a.tipoAnuncio }} - Preço: até {{ a.precoMax }} (€)
+          </p>
+          <p class="meta-footer">
+            <span class="data">Criado a {{ formatarData(a.criadoEm) }}</span>
+            <span class="badge">2 correspondências hoje</span>
+          </p>
+        </section>
+
+        <aside class="actions">
+          <ion-toggle [checked]="a.ativo" (ionChange)="toggleAtivo(a)" color="warning"></ion-toggle>
+          <button class="btn-edit" (click)="editar(a)">Editar</button>
+          <button class="btn-remove" (click)="remover(a.id!)">Remover</button>
+        </aside>
+      </article>
+
+    </ng-container>
+
+    <ng-container *ngIf="abaAtiva === 'notificacoes'">
+      <p class="empty">Nenhuma notificação recebida.</p>
+    </ng-container>
+
+  </section>
+
 </ion-content>
+
+<app-footer></app-footer>
