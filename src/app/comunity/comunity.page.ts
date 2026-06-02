@@ -4,9 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { IonContent, IonHeader, IonToolbar, IonSearchbar, IonButton, IonButtons, IonIcon, IonList, IonItem, IonAvatar, IonLabel, IonBadge} from '@ionic/angular/standalone';
 import { HeaderComponent } from 'src/app/components/header/header.component';
 import { FooterComponent } from '../components/footer/footer.component';
-import { notificationsOutline, personCircleOutline } from 'ionicons/icons';
 import { addIcons } from 'ionicons';
-import { searchOutline, addOutline } from 'ionicons/icons';
+import { searchOutline, addOutline, notificationsOutline, personCircleOutline } from 'ionicons/icons';
 
 @Component({
   selector: 'app-comunity',
@@ -39,7 +38,7 @@ export class ComunityPage implements OnInit {
   });
 
   constructor() { 
-   addIcons({ searchOutline, addOutline }); 
+   addIcons({ searchOutline, addOutline, personCircleOutline, notificationsOutline }); 
   }
   ngOnInit() {
   }
