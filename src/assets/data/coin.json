@@ -1,0 +1,137 @@
+[
+  {
+    "nome": "5 Escudos (Caravela)",
+    "preco_euros": 7.50,
+    "estado": "Muito Bem Conservada (MBC)",
+    "material": "Prata",
+    "ano": 1933,
+    "pais": "Portugal",
+    "imagem_url": "https://upload.wikimedia.org/wikipedia/commons/e/e0/5_escudos_1933.jpg"
+  },
+  {
+    "nome": "Sovereign (Rainha Vitória)",
+    "preco_euros": 580.00,
+    "estado": "Bem Conservada (B)",
+    "material": "Ouro",
+    "ano": 1892,
+    "pais": "Reino Unido",
+    "imagem_url": "https://upload.wikimedia.org/wikipedia/commons/c/c2/1892_Sovereign.jpg"
+  },
+  {
+    "nome": "Morgan Dollar",
+    "preco_euros": 45.00,
+    "estado": "Muito Bem Conservada (MBC)",
+    "material": "Prata",
+    "ano": 1881,
+    "pais": "Estados Unidos",
+    "imagem_url": "https://upload.wikimedia.org/wikipedia/commons/e/ee/1881_S_Morgan_Dollar_Obverse.jpg"
+  },
+  {
+    "nome": "20 Francos (Napoleão III)",
+    "preco_euros": 420.00,
+    "estado": "Belo (Belo)",
+    "material": "Ouro",
+    "ano": 1868,
+    "pais": "França",
+    "imagem_url": "https://upload.wikimedia.org/wikipedia/commons/c/ca/20_Francs_Napol%C3%A9on_III_1868.jpg"
+  },
+  {
+    "nome": "100 Pesetas (Afonso XIII)",
+    "preco_euros": 2100.00,
+    "estado": "Flor de Cunho (FDC)",
+    "material": "Ouro",
+    "ano": 1897,
+    "pais": "Espanha",
+    "imagem_url": "https://upload.wikimedia.org/wikipedia/commons/c/c6/100_Pesetas_Alfonso_XIII_1897.jpg"
+  },
+  {
+    "nome": "2 Euro Comemorativa (Padre Himalaia)",
+    "preco_euros": 3.50,
+    "estado": "Flor de Cunho (FDC)",
+    "material": "Bimetálica (Cuproníquel/Latão)",
+    "ano": 2024,
+    "pais": "Portugal",
+    "imagem_url": "https://upload.wikimedia.org/wikipedia/commons/0/05/2_Euros_Portugal_2024_Himalaia.jpg"
+  },
+  {
+    "nome": "10 Marcos (Guilherme II)",
+    "preco_euros": 310.00,
+    "estado": "Muito Bem Conservada (MBC)",
+    "material": "Ouro",
+    "ano": 1905,
+    "pais": "Alemanha",
+    "imagem_url": "https://upload.wikimedia.org/wikipedia/commons/d/dd/10_Mark_Wilhelm_II_1905.jpg"
+  },
+  {
+    "nome": "50 Centavos (República)",
+    "preco_euros": 12.00,
+    "estado": "Bem Conservada (B)",
+    "material": "Alumínio-Bronze",
+    "ano": 1928,
+    "pais": "Portugal",
+    "imagem_url": "https://upload.wikimedia.org/wikipedia/commons/1/1a/50_centavos_1928.jpg"
+  },
+  {
+    "nome": "Walking Liberty Half Dollar",
+    "preco_euros": 25.00,
+    "estado": "Muito Bem Conservada (MBC)",
+    "material": "Prata",
+    "ano": 1943,
+    "pais": "Estados Unidos",
+    "imagem_url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Walking_Liberty_half_dollar_obverse.jpg"
+  },
+  {
+    "nome": "100 Liras (Vítor Manuel III)",
+    "preco_euros": 650.00,
+    "estado": "Belo (Belo)",
+    "material": "Ouro",
+    "ano": 1931,
+    "pais": "Itália",
+    "imagem_url": "https://upload.wikimedia.org/wikipedia/commons/5/52/100_Lire_Vittorio_Emanuele_III.jpg"
+  },
+  {
+    "nome": "Krugerrand",
+    "preco_euros": 2350.00,
+    "estado": "Flor de Cunho (FDC)",
+    "material": "Ouro",
+    "ano": 1982,
+    "pais": "África do Sul",
+    "imagem_url": "https://upload.wikimedia.org/wikipedia/commons/3/36/Krugerrand_gold.jpg"
+  },
+  {
+    "nome": "1 Real",
+    "preco_euros": 1.50,
+    "estado": "Muito Bem Conservada (MBC)",
+    "material": "Bimetálica (Aço)",
+    "ano": 2016,
+    "pais": "Brasil",
+    "imagem_url": "https://upload.wikimedia.org/wikipedia/commons/b/bc/1_Real_2016_Obverse.jpg"
+  },
+  {
+    "nome": "5 Pesetas (Afonso XII)",
+    "preco_euros": 35.00,
+    "estado": "Bem Conservada (B)",
+    "material": "Prata",
+    "ano": 1885,
+    "pais": "Espanha",
+    "imagem_url": "https://upload.wikimedia.org/wikipedia/commons/2/23/5_Pesetas_Alfonso_XII_1885.jpg"
+  },
+  {
+    "nome": "100 Escudos (Camilo Castelo Branco)",
+    "preco_euros": 5.00,
+    "estado": "Flor de Cunho (FDC)",
+    "material": "Cuproníquel",
+    "ano": 1990,
+    "pais": "Portugal",
+    "imagem_url": "https://upload.wikimedia.org/wikipedia/commons/4/4c/100_escudos_1990.jpg"
+  },
+  {
+    "nome": "Maple Leaf",
+    "preco_euros": 38.00,
+    "estado": "Flor de Cunho (FDC)",
+    "material": "Prata",
+    "ano": 2020,
+    "pais": "Canadá",
+    "imagem_url": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Canadian_Silver_Maple_Leaf_Obverse.jpg"
+  }
+]
