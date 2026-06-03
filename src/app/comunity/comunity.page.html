@@ -29,7 +29,10 @@
         <h3 class="chat-name">{{ chat.name }}</h3>
         <p class="chat-message">{{ chat.message }}</p>
       </ion-label>
-
+      
+      <ion-badge *ngIf="chat.unread > 0" slot="end" color="primary">
+        {{ chat.unread }}
+      </ion-badge>
       <span slot="end" class="chat-time">{{ chat.time }}</span>
     </ion-item>
   </ion-list>

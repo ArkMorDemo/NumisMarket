@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "João Silva",
+    "message": "Tens o Escudo de 1964 disponível?",
+    "time": "10:32",
+    "avatar": "person-circle-outline",
+    "unread": 2
+  },
+  {
+    "id": 2,
+    "name": "Maria Costa",
+    "message": "Quanto pedes pela moeda romana?",
+    "time": "09:15",
+    "avatar": "person-circle-outline",
+    "unread": 0
+  },
+  {
+    "id": 3,
+    "name": "Carlos Ferreira",
+    "message": "Obrigado pela compra! 👍",
+    "time": "Ontem",
+    "avatar": "person-circle-outline",
+    "unread": 0
+  },
+  {
+    "id": 4,
+    "name": "Ana Rodrigues",
+    "message": "Podes enviar mais fotos?",
+    "time": "Seg",
+    "avatar": "person-circle-outline",
+    "unread": 1
+  },
+  {
+    "id": 5,
+    "name": "Pedro Almeida",
+    "message": "Aceitas troca por peças?",
+    "time": "Dom",
+    "avatar": "person-circle-outline",
+    "unread": 0
+  }
+]
