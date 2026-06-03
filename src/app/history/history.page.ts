@@ -33,7 +33,7 @@ export interface Moeda {
 export class HistoryPage implements OnInit {
 
   moedas: Moeda[] = [];
-moframe_url: any;
+  moframe_url: any;
 
   constructor(private http: HttpClient) {
      addIcons({ searchOutline});

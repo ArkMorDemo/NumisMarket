@@ -45,21 +45,20 @@
   </div>
 
   <h2 class="month-title">Abril 2026</h2>
-
   <div class="movement-card">
     <div class="card-left">
       <div class="icon-container icon-gold">
         <ion-icon name="logo-usd"></ion-icon>
       </div>
       <div class="movement-details">
-        <h3>Compra direta — 500 réis 1898 D. Carlos I</h3>
+        <h3>Compra direta - {{ moedas[5].nome }}</h3>
         <p class="metadata">numismatica_sul · CTT Registado · ref. #C-0091</p>
         <p class="date">07 abr 2026 · 09:43</p>
       </div>
     </div>
     <div class="card-right">
       <div class="price-status">
-        <span class="price text-red">- 85,10 €</span>
+        <span class="price text-red">- {{ moedas[5].preco_euros }} €</span>
         <span class="badge badge-enviado">Enviado</span>
       </div>
       <ion-button size="small" class="btn-detail">Detalhe</ion-button>
@@ -72,7 +71,7 @@
         <ion-icon name="swap-horizontal-outline"></ion-icon>
       </div>
       <div class="movement-details">
-        <h3>Troca concluída — 500 réis 1895 ⇄ lote Brasil</h3>
+        <h3>Troca concluída — {{ moedas[6].nome }}</h3>
         <p class="metadata">numismatica_sul · CTT Registado · ref. #C-0099</p>
         <p class="date">02 abr 2026 · 09:43</p>
       </div>
@@ -94,14 +93,14 @@
         <ion-icon name="cart-outline"></ion-icon>
       </div>
       <div class="movement-details">
-        <h3>Grupo de compra — Coleção República</h3>
+        <h3>Grupo de compra — {{ moedas[7].nome }}</h3>
         <p class="metadata">numismatica_sul · CTT Registado · ref. #C-0095</p>
         <p class="date">04 abr 2026 · 09:43</p>
       </div>
     </div>
     <div class="card-right">
       <div class="price-status">
-        <span class="price text-red">- 60,50 €</span>
+        <span class="price text-red">- {{ moedas[7].preco_euros }} €</span>
         <span class="badge badge-blue">Grupo</span>
       </div>
       <ion-button size="small" class="btn-detail">Detalhe</ion-button>
