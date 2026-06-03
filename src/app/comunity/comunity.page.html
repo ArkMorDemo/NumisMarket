@@ -22,7 +22,7 @@
   <ion-list lines="none" class="transparent-list">
     <ion-item *ngFor="let chat of conversations" class="chat-item">
       <ion-avatar slot="start">
-        <ion-icon name="person-circle-outline" class="avatar-icon"></ion-icon>
+        <img [src]="chat.avatar" class="icono" />
       </ion-avatar>
 
       <ion-label>

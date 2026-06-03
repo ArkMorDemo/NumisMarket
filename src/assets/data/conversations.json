@@ -4,7 +4,7 @@
     "name": "João Silva",
     "message": "Tens o Escudo de 1964 disponível?",
     "time": "10:32",
-    "avatar": "person-circle-outline",
+    "avatar": "assets/img/man.png",
     "unread": 2
   },
   {
@@ -12,7 +12,7 @@
     "name": "Maria Costa",
     "message": "Quanto pedes pela moeda romana?",
     "time": "09:15",
-    "avatar": "person-circle-outline",
+    "avatar": "assets/img/woman.png",
     "unread": 0
   },
   {
@@ -20,7 +20,7 @@
     "name": "Carlos Ferreira",
     "message": "Obrigado pela compra! 👍",
     "time": "Ontem",
-    "avatar": "person-circle-outline",
+    "avatar": "assets/img/man1.png",
     "unread": 0
   },
   {
@@ -28,7 +28,7 @@
     "name": "Ana Rodrigues",
     "message": "Podes enviar mais fotos?",
     "time": "Seg",
-    "avatar": "person-circle-outline",
+    "avatar": "assets/img/woman1.png",
     "unread": 1
   },
   {
@@ -36,7 +36,7 @@
     "name": "Pedro Almeida",
     "message": "Aceitas troca por peças?",
     "time": "Dom",
-    "avatar": "person-circle-outline",
+    "avatar": "assets/img/man3.png",
     "unread": 0
   }
 ]
