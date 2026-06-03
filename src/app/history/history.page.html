@@ -32,13 +32,12 @@
       <div class="details">
         <h3>{{ moedas[5].nome }} — {{ moedas[5].ano }}</h3>
         <p class="subtitle">{{ moedas[5].material }} - Estado {{ moedas[5].estado }}</p>
-        <p class="seller"><span class="seller-badge">{{ moedas[5].pais | slice:0:2 | uppercase }}</span></p>
-        
+        <p class="seller"><span class="seller-badge">{{ moedas[5].pais | slice:0:2 | uppercase }}</span></p>  
       </div>
     </div>
     <div class="product-actions">
       <div class="price-status">
-        <span class="price">{{ moedas[0].preco_euros | currency:'EUR':'symbol':'1.2-2':'pt-PT' }}</span>
+        <h3>{{ moedas[5].preco_euros }} €</h3>
         <span class="status-badge status-enviado">Enviado</span>
       </div>
       <div class="buttons">
@@ -64,7 +63,7 @@
     
     <div class="product-actions">
       <div class="price-status">
-        <span class="price">{{ moeda.preco_euros | currency:'EUR':'symbol':'1.2-2':'pt-PT' }}</span>
+        <h3>{{ moeda.preco_euros }} €</h3>
         <span class="status-badge status-entregue">Disponível</span>
       </div>
       <div class="buttons">
