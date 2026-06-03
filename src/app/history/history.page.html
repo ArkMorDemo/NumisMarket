@@ -32,7 +32,8 @@
       <div class="details">
         <h3>{{ moedas[5].nome }} — {{ moedas[5].ano }}</h3>
         <p class="subtitle">{{ moedas[5].material }} - Estado {{ moedas[5].estado }}</p>
-        <p class="seller"><span class="seller-badge">{{ moedas[5].pais }}</span> Original</p>
+        <p class="seller"><span class="seller-badge">{{ moedas[5].pais | slice:0:2 | uppercase }}</span></p>
+        
       </div>
     </div>
     <div class="product-actions">
@@ -57,7 +58,7 @@
       <div class="details">
         <h3>{{ moeda.nome }} ({{ moeda.ano }})</h3>
         <p class="subtitle">{{ moeda.material }} - Estado {{ moeda.estado }}</p>
-        <p class="seller"><span class="seller-badge">{{ moeda.pais | slice:0:2 | uppercase }}</span> {{ moeda.pais }}</p>
+        <p class="seller"><span class="seller-badge">{{ moeda.pais | slice:0:2 | uppercase }}</span></p>
       </div>
     </div>
     
