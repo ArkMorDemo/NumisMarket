@@ -42,7 +42,7 @@
   {
     "id": 5,
     "nome": "100 Pesetas (Afonso XIII)",
-    "preco_euros": 2100.00,
+    "preco_euros": 210.00,
     "estado": " FDC",
     "material": "Ouro",
     "ano": 1897,
@@ -102,7 +102,7 @@
   {
     "id": 11,
     "nome": "Krugerrand",
-    "preco_euros": 2350.00,
+    "preco_euros": 320.00,
     "estado": " FDC",
     "material": "Ouro",
     "ano": 1982,

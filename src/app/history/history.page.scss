@@ -62,10 +62,21 @@ ion-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
 
-  // Opcional: borda azul tracejada para cartão em destaque
-  &.highlighted-border {
-    border: 1.5px dashed #00a2ff;
+// Elemento pai (ajuste o nome da classe conforme o seu HTML se necessário)
+.product-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+
+  // --- MEDIA QUERY PARA TELEMÓVEL ---
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
   }
 }
 
@@ -85,6 +96,7 @@ ion-content {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0; // Garante que a imagem não esmaga no telemóvel
   }
 
   .details {
@@ -106,8 +118,8 @@ ion-content {
       display: flex;
       align-items: center;
       gap: 5px;
+      flex-wrap: wrap; // Permite que a badge quebre para baixo se o nome for longo
 
-      // Etiqueta/badge do vendedor
       .seller-badge {
         background: #eaaa00;
         color: black;
@@ -116,6 +128,12 @@ ion-content {
         padding: 1px 4px;
         border-radius: 4px;
       }
+
+      .price {
+      color: #ffffff;
+      font-weight: bold;
+      font-size: 0.95rem;
+    }
     }
   }
 }
@@ -126,21 +144,34 @@ ion-content {
   align-items: flex-end;
   gap: 15px;
 
+  // --- ALTERAÇÕES PARA TELEMÓVEL ---
+  @media (max-width: 768px) {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center; // Alinha preço e botões horizontalmente
+    border-top: 1px solid #333; // Linha subtil para separar a info das ações
+    padding-top: 12px;
+  }
+
   .price-status {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-end;
     gap: 5px;
+
+    // Ajuste para telemóvel: alinhar à esquerda se preferir, ou manter à direita
+    @media (max-width: 768px) {
+      align-items: flex-start; 
+    }
 
     .price {
       color: #ffffff;
       font-weight: bold;
-      font-size: 0.95rem;
+      font-size: 0.80rem;
     }
 
-    // Badges de Estado do Pedido
     .status-badge {
-      font-size: 0.7rem;
+      font-size: 0.50rem;
       font-weight: bold;
       padding: 3px 8px;
       border-radius: 10px;
@@ -161,11 +192,15 @@ ion-content {
     }
   }
 
-  // Botões de ação verticais
   .buttons {
     display: flex;
     flex-direction: column;
     gap: 6px;
+
+    // Se tiver apenas 1 botão, no mobile podemos mudá-lo para linha se quiser
+    @media (max-width: 768px) {
+      flex-direction: row; 
+    }
 
     .btn-dark {
       --background: #111111;
