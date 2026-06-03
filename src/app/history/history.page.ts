@@ -9,6 +9,18 @@ import { addIcons } from 'ionicons';
 addIcons({ timeOutline, notificationsOutline, homeOutline, walletOutline, cartOutline, logoUsd, chatbubbleOutline, starOutline });
 import { ModalController } from '@ionic/angular';
 import { HistoricoModalComponent } from './historico-modal/historico-modal.component';
+import { HttpClient } from '@angular/common/http';
+
+export interface Moeda {
+  id: number;
+  nome: string;
+  preco_euros: number;
+  estado: string;
+  material: string;
+  ano: number;
+  pais: string;
+  imagem_url: string;
+}
 
 
 @Component({
@@ -20,11 +32,26 @@ import { HistoricoModalComponent } from './historico-modal/historico-modal.compo
 })
 export class HistoryPage implements OnInit {
 
-  constructor() {
+  moedas: Moeda[] = [];
+moframe_url: any;
+
+  constructor(private http: HttpClient) {
      addIcons({ searchOutline});
    }
 
   ngOnInit() {
+    this.loadMoedas();
+  }
+
+  loadMoedas() {
+    this.http.get<Moeda[]>('assets/data/coin.json').subscribe({
+      next: (data) => {
+        this.moedas = data;
+      },
+      error: (err) => {
+        console.error('Erro ao carregar o ficheiro de moedas:', err);
+      }
+    });
   }
 
 }
