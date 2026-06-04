@@ -3,6 +3,10 @@
   padding: 64px;
 }
 
+ion-content {
+  --padding-bottom: calc(56px + 24px + env(safe-area-inset-bottom));
+}
+
 // Title block — coin + NumisMarket name
 #title-block {
   display: flex;
