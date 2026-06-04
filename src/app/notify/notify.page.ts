@@ -89,6 +89,7 @@ export class NotifyPage implements OnInit {
   async remover(id: string) {
     const confirm = await this.alertCtrl.create({
       header: 'Remover alerta?',
+      cssClass: 'alerta-remover',
       buttons: [
         { text: 'Cancelar', role: 'cancel' },
         {
