@@ -1,0 +1,251 @@
+* {
+  box-sizing: border-box;
+}
+ 
+.notify-content {
+  --background: #000;
+  color: #fff;
+}
+ 
+.container {
+  padding: 16px;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  margin: 0 auto;
+  height: fit-content;
+}
+ 
+/* TOPO */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  flex-wrap: nowrap;
+  min-width: 0;
+}
+ 
+.page-title {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 800;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+  flex-shrink: 1;
+}
+ 
+.btn-criar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #f5b800;
+  color: #000;
+  border: 2px solid #f5b800;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+ 
+  ion-icon { font-size: 18px; }
+ 
+  &:active { background: #d9a300; }
+}
+ 
+.divider {
+  height: 2px;
+  background: #f5b800;
+  margin-bottom: 16px;
+  border: none;
+}
+ 
+/* TABS */
+.tabs {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #222;
+  width: 100%;
+}
+ 
+.tab {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 10px 4px;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  flex: 1;
+  text-align: center;
+  min-width: 0;
+ 
+  &.active {
+    color: #f5b800;
+    border-bottom-color: #f5b800;
+    font-weight: 700;
+  }
+}
+ 
+.btn-return {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 4px;
+  white-space: nowrap;
+  flex-shrink: 0;
+ 
+  ion-icon { font-size: 16px; }
+}
+ 
+/* SEÇÕES */
+.section-title {
+  color: #f5b800;
+  font-size: 12px;
+  font-weight: 700;
+  margin: 20px 0 10px;
+  letter-spacing: 0.8px;
+ 
+  &.pausados { margin-top: 28px; }
+}
+ 
+.empty {
+  color: #666;
+  padding: 16px 0;
+  font-style: italic;
+  font-size: 14px;
+}
+ 
+/* CARD */
+.alert-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: #1a1a1a;
+  border-radius: 10px;
+  padding: 14px;
+  margin-bottom: 10px;
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+ 
+  &.pausado { opacity: 0.65; }
+ 
+  .info {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    min-width: 0;
+    width: 100%;
+  }
+ 
+  .bell {
+    color: #f5b800;
+    font-size: 22px;
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+ 
+  .info-text {
+    flex: 1;
+    min-width: 0;
+ 
+    h2 {
+      color: #f5b800;
+      font-size: 15px;
+      font-weight: 700;
+      margin: 0 0 4px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+ 
+    .meta {
+      color: #ddd;
+      font-size: 12px;
+      margin: 0 0 6px;
+      line-height: 1.4;
+      word-break: break-word;
+    }
+ 
+    .meta-footer {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0;
+ 
+      .data {
+        color: #888;
+        font-size: 12px;
+      }
+ 
+      .badge {
+        background: #f5b800;
+        color: #000;
+        font-size: 11px;
+        font-weight: 700;
+        padding: 2px 8px;
+        border-radius: 10px;
+      }
+    }
+  }
+ 
+  .actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    flex-wrap: wrap;
+ 
+    ion-toggle {
+      --background: #444;
+      --background-checked: #f5b800;
+      --handle-background: #000;
+      --handle-background-checked: #000;
+      flex-shrink: 0;
+    }
+ 
+    .btn-edit,
+    .btn-remove {
+      background: #f5b800;
+      color: #000;
+      border: none;
+      border-radius: 6px;
+      padding: 7px 14px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      min-width: 64px;
+      text-align: center;
+ 
+      &:active { background: #d9a300; }
+    }
+ 
+    .btn-remove {
+      background: transparent;
+      border: 1px solid #f5b800;
+      color: #f5b800;
+ 
+      &:active {
+        background: #f5b800;
+        color: #000;
+      }
+    }
+  }
+}

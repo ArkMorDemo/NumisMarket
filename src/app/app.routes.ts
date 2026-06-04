@@ -45,9 +45,30 @@ export const routes: Routes = [
   {
     path: 'details/:id',
     loadComponent: () => import('./details/details.page').then( m => m.DetailsPage)
-  },  {
+  },
+  {
     path: 'account',
     loadComponent: () => import('./account/account.page').then( m => m.AccountPage)
+  },
+  {
+    path: 'history',
+    loadComponent: () => import('./history/history.page').then( m => m.HistoryPage)
+  },
+  {
+    path: 'profile',
+    loadComponent: () => import('./profile/profile.page').then( m => m.ProfilePage)
+  },
+  {
+    path: 'bidding',
+    loadComponent: () => import('./bidding/bidding.page').then( m => m.BiddingPage)
+  },
+  {
+    path: 'grade',
+    loadComponent: () => import('./grade/grade.page').then( m => m.GradePage)
+  },
+  {
+    path: 'details',
+    loadComponent: () => import('./details/details.page').then( m => m.DetailsPage)
   },
 
 ];
