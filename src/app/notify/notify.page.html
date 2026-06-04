@@ -98,11 +98,14 @@
     </ng-container>
  
     <ng-container *ngIf="abaAtiva === 'notificacoes'">
-      
-      <article *ngFor="let a of pausados" class="alert-card pausado">
+        <h3 class="section-title">ATIVOS</h3>
+ 
+      <p *ngIf="ativos.length === 0" class="empty">Sem alertas ativos.</p>
+ 
+      <article *ngFor="let a of ativos" class="alert-card">
  
         <section class="info">
-          <ion-icon name="notifications-outline" class="bell"></ion-icon>
+          <ion-icon name="notifications" class="bell"></ion-icon>
           <div class="info-text">
             <h2>{{ a.nome }}</h2>
             <p class="meta">{{ a.pais }} • {{ a.material }} • {{ a.tipoAnuncio }} • até {{ a.precoMax }} €</p>
@@ -124,10 +127,15 @@
         </aside>
  
       </article>
+ 
+   
+
+    
     </ng-container>
  
   </section>
+
  
   <app-footer></app-footer>
  
-</ion-content>
+</ion-content>  
