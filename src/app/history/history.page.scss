@@ -8,12 +8,9 @@
 
 ion-content {
   --background: var(--background-dark);
-
-
   --overflow: auto;
+  --padding-bottom: 80px; // 👈 adicione esta linha
   pointer-events: auto;
-  padding-bottom: 80px;
-  
 
   &::part(scroll) {
     pointer-events: auto;
