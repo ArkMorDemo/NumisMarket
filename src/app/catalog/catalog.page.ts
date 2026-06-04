@@ -53,9 +53,9 @@ export class CatalogPage implements OnInit, OnDestroy {
   errorMsg: string | null = null;
 
   selectedCountry = '';
-  selectedType    = '';
-  selectedEra     = '';
-  searchName      = '';
+  selectedType = '';
+  selectedEra = '';
+  searchName = '';
 
   readonly countries = [
     { id: 'pt', name: 'Portugal' },
@@ -71,19 +71,24 @@ export class CatalogPage implements OnInit, OnDestroy {
   constructor(
     private coinService: CoinService,
     private router: Router,
-    private modalCtrl: ModalController,
+    private modalCtrl: ModalController
   ) {}
 
   ngOnInit(): void {
     this.subs.add(
       this.coinService.getLoading().subscribe(v => this.isLoading = v)
     );
+
     this.subs.add(
       this.coinService.getError().subscribe(v => this.errorMsg = v)
     );
+
     this.subs.add(
-      this.coinService.getFilteredCoins().subscribe(coins => this.coins = coins)
+      this.coinService.getFilteredCoins().subscribe(
+        coins => this.coins = coins
+      )
     );
+
     this.subs.add(
       this.coinService.loadCoins().subscribe()
     );
@@ -93,15 +98,44 @@ export class CatalogPage implements OnInit, OnDestroy {
     this.subs.unsubscribe();
   }
 
-  onCardAction(coin: Coin): void {
-    this.router.navigate(['/coin-detail', coin.id]);
+  onCountryChange(event: any): void {
+    this.selectedCountry = event.detail.value;
+    this.coinService.setFilters({
+      country: this.selectedCountry
+    });
   }
 
-  async abrirAlerta() {
+  onTypeChange(event: any): void {
+    this.selectedType = event.detail.value;
+    this.coinService.setFilters({
+      type: this.selectedType
+    });
+  }
+
+  onEraChange(event: any): void {
+    this.selectedEra = event.detail.value;
+    this.coinService.setFilters({
+      era: this.selectedEra
+    });
+  }
+
+  onSearchName(event: any): void {
+    this.searchName = event.detail?.value ?? '';
+    this.coinService.setFilters({
+      name: this.searchName
+    });
+  }
+
+  onCardAction(coin: Coin): void {
+    this.router.navigate(['/details', coin.id]);
+  }
+
+  async abrirAlerta(): Promise<void> {
     const modal = await this.modalCtrl.create({
       component: AlertModalComponent,
       cssClass: 'alerta-modal',
     });
+
     await modal.present();
   }
 }
