@@ -1,17 +1,12 @@
-<p>
-  alert-modal works!
-</p>
-
 <ion-content class="modal-content">
   <div class="modal-box">
-
-    <!-- Botão X -->
+ 
     <button class="close-btn" (click)="fechar()">
       <ion-icon name="close"></ion-icon>
     </button>
-
-    <h1 class="modal-title">Novo alerta de moeda</h1>
-
+ 
+    <h1 class="modal-title">{{ modoEdicao ? 'Editar alerta' : 'Novo alerta de moeda' }}</h1>
+ 
     <!-- Nome do alerta -->
     <div class="field">
       <label>Nome do alerta</label>
@@ -22,7 +17,7 @@
         [(ngModel)]="alerta.nome"
       />
     </div>
-
+ 
     <!-- Linha 1: País + Tipo -->
     <div class="row">
       <div class="field half">
@@ -32,7 +27,7 @@
           <option *ngFor="let p of paises" [value]="p">{{ p }}</option>
         </select>
       </div>
-
+ 
       <div class="field half">
         <label>Tipo de anúncio</label>
         <select class="field-input" [(ngModel)]="alerta.tipoAnuncio">
@@ -41,7 +36,7 @@
         </select>
       </div>
     </div>
-
+ 
     <!-- Linha 2: Época + Material -->
     <div class="row">
       <div class="field half">
@@ -51,7 +46,7 @@
           <option *ngFor="let e of epocas" [value]="e">{{ e }}</option>
         </select>
       </div>
-
+ 
       <div class="field half">
         <label>Material</label>
         <select class="field-input" [(ngModel)]="alerta.material">
@@ -60,27 +55,27 @@
         </select>
       </div>
     </div>
-
+ 
     <!-- Preço -->
- <!-- Preço -->
-<div class="field">
-  <div class="preco-header">
-    <label>Preço</label>
-    <span class="preco-valor">
-      {{ alerta.precoMin | number }} - {{ alerta.precoMax | number }} (€)
-    </span>
-  </div>
-
-  <ion-range
-    [dualKnobs]="true"
-    min="0"
-    max="1000000"
-    step="1000"
-    [value]="{ lower: alerta.precoMin, upper: alerta.precoMax }"
-    (ionInput)="onPrecoChange($event)"
-    class="preco-slider"
-  ></ion-range>
-</div>
+    <div class="field">
+      <div class="preco-header">
+        <label>Preço</label>
+        <span class="preco-valor">
+          {{ alerta.precoMin | number }} - {{ alerta.precoMax | number }} (€)
+        </span>
+      </div>
+ 
+      <ion-range
+        [dualKnobs]="true"
+        min="0"
+        max="1000000"
+        step="1000"
+        [value]="{ lower: alerta.precoMin, upper: alerta.precoMax }"
+        (ionInput)="onPrecoChange($event)"
+        class="preco-slider"
+      ></ion-range>
+    </div>
+ 
     <!-- Notificar via -->
     <div class="field">
       <label>Notificar via</label>
@@ -95,13 +90,15 @@
         </label>
       </div>
     </div>
-
+ 
     <!-- Botões -->
     <div class="actions">
       <button class="btn btn-cancel" (click)="cancelar()">Cancelar</button>
-      <button class="btn btn-save" (click)="guardar()">Guardar alerta</button>
-      <button class="btn btn-save" routerLink="/notify">alertas</button>
+      <button class="btn btn-save" (click)="guardar()">
+        {{ modoEdicao ? 'Guardar alterações' : 'Guardar alerta' }}
+      </button>
+      <button class="btn btn-cancel" routerLink="/notify">no</button>
     </div>
-
+ 
   </div>
 </ion-content>

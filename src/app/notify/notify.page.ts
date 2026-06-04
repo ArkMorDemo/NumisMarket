@@ -81,10 +81,18 @@ export class NotifyPage implements OnInit {
     if (role === 'confirm') this.carregar();
   }
 
-  editar(alerta: AlertaMoeda) {
-    console.log('Editar:', alerta);
-    // TODO: abrir modal em modo edição
-  }
+  async editar(alerta: AlertaMoeda) {
+  const modal = await this.modalCtrl.create({
+    component: AlertModalComponent,
+    cssClass: 'alerta-modal',
+    componentProps: {
+      alertaEditar: alerta,
+    },
+  });
+  await modal.present();
+  const { role } = await modal.onWillDismiss();
+  if (role === 'confirm') this.carregar();
+}
 
   async remover(id: string) {
     const confirm = await this.alertCtrl.create({
