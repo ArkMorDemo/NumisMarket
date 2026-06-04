@@ -62,14 +62,24 @@ ion-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
 
-  // Opcional: borda azul tracejada para cartão em destaque
-  &.highlighted-border {
-    border: 1.5px dashed #00a2ff;
+.product-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+
+  // --- MEDIA QUERY PARA TELEMÓVEL ---
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
   }
 }
 
-// Informação do Produto (Lado Esquerdo)
+// Informação do Produto 
 .product-info {
   display: flex;
   align-items: center;
@@ -85,6 +95,7 @@ ion-content {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0; 
   }
 
   .details {
@@ -106,8 +117,8 @@ ion-content {
       display: flex;
       align-items: center;
       gap: 5px;
+      flex-wrap: wrap; 
 
-      // Etiqueta/badge do vendedor
       .seller-badge {
         background: #eaaa00;
         color: black;
@@ -116,31 +127,49 @@ ion-content {
         padding: 1px 4px;
         border-radius: 4px;
       }
+
+      .price {
+      color: #ffffff;
+      font-weight: bold;
+      font-size: 0.95rem;
+    }
     }
   }
 }
 
-// Ações e Preços (Lado Direito)
+// Ações e Preços 
 .product-actions {
   display: flex;
   align-items: flex-end;
   gap: 15px;
 
+  @media (max-width: 768px) {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center; 
+    border-top: 1px solid #333; 
+    padding-top: 12px;
+  }
+
   .price-status {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-end;
     gap: 5px;
+
+    // Ajuste para telemóvel
+    @media (max-width: 768px) {
+      align-items: flex-start; 
+    }
 
     .price {
       color: #ffffff;
       font-weight: bold;
-      font-size: 0.95rem;
+      font-size: 0.80rem;
     }
 
-    // Badges de Estado do Pedido
     .status-badge {
-      font-size: 0.7rem;
+      font-size: 0.50rem;
       font-weight: bold;
       padding: 3px 8px;
       border-radius: 10px;
@@ -161,11 +190,14 @@ ion-content {
     }
   }
 
-  // Botões de ação verticais
   .buttons {
     display: flex;
     flex-direction: column;
     gap: 6px;
+
+    @media (max-width: 768px) {
+      flex-direction: row; 
+    }
 
     .btn-dark {
       --background: #111111;
@@ -185,9 +217,7 @@ ion-content {
 ion-content {
   &::part(scroll) {
     &::-webkit-scrollbar {
-      display: none; /* Safari y Chrome (Mobile) */
+      display: none; 
     }
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE y Edge */
   }
 }
