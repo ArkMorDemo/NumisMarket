@@ -99,6 +99,40 @@
  
     <ng-container *ngIf="abaAtiva === 'notificacoes'">
       
+      <h3 class="section-title">ATIVOS</h3>
+ 
+      <p *ngIf="ativos.length === 0" class="empty">Sem alertas ativos.</p>
+ 
+      <article *ngFor="let a of ativos" class="alert-card">
+ 
+        <section class="info">
+          <ion-icon name="notifications" class="bell"></ion-icon>
+          <div class="info-text">
+            <h2>{{ a.nome }}</h2>
+            <p class="meta">{{ a.pais }} • {{ a.material }} • {{ a.tipoAnuncio }} • até {{ a.precoMax }} €</p>
+            <p class="meta-footer">
+              <span class="data">{{ formatarData(a.criadoEm) }}</span>
+              <span class="badge">2 hoje</span>
+            </p>
+          </div>
+        </section>
+ 
+        <aside class="actions">
+          <ion-toggle
+            [checked]="a.ativo"
+            (ionChange)="toggleAtivo(a)"
+            color="warning">
+          </ion-toggle>
+          <button class="btn-edit" (click)="editar(a)">Editar</button>
+          <button class="btn-remove" (click)="remover(a.id!)">Remover</button>
+        </aside>
+ 
+      </article>
+ 
+      <h3 class="section-title pausados">PAUSADOS</h3>
+ 
+      <p *ngIf="pausados.length === 0" class="empty">Sem alertas pausados.</p>
+ 
       <article *ngFor="let a of pausados" class="alert-card pausado">
  
         <section class="info">
@@ -124,6 +158,8 @@
         </aside>
  
       </article>
+ 
+
     </ng-container>
  
   </section>
