@@ -64,7 +64,6 @@ ion-content {
   align-items: center;
 }
 
-// Elemento pai (ajuste o nome da classe conforme o seu HTML se necessário)
 .product-card {
   display: flex;
   justify-content: space-between;
@@ -80,7 +79,7 @@ ion-content {
   }
 }
 
-// Informação do Produto (Lado Esquerdo)
+// Informação do Produto 
 .product-info {
   display: flex;
   align-items: center;
@@ -96,7 +95,7 @@ ion-content {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0; // Garante que a imagem não esmaga no telemóvel
+    flex-shrink: 0; 
   }
 
   .details {
@@ -118,7 +117,7 @@ ion-content {
       display: flex;
       align-items: center;
       gap: 5px;
-      flex-wrap: wrap; // Permite que a badge quebre para baixo se o nome for longo
+      flex-wrap: wrap; 
 
       .seller-badge {
         background: #eaaa00;
@@ -138,18 +137,17 @@ ion-content {
   }
 }
 
-// Ações e Preços (Lado Direito)
+// Ações e Preços 
 .product-actions {
   display: flex;
   align-items: flex-end;
   gap: 15px;
 
-  // --- ALTERAÇÕES PARA TELEMÓVEL ---
   @media (max-width: 768px) {
     width: 100%;
     justify-content: space-between;
-    align-items: center; // Alinha preço e botões horizontalmente
-    border-top: 1px solid #333; // Linha subtil para separar a info das ações
+    align-items: center; 
+    border-top: 1px solid #333; 
     padding-top: 12px;
   }
 
@@ -159,7 +157,7 @@ ion-content {
     align-items: flex-end;
     gap: 5px;
 
-    // Ajuste para telemóvel: alinhar à esquerda se preferir, ou manter à direita
+    // Ajuste para telemóvel
     @media (max-width: 768px) {
       align-items: flex-start; 
     }
@@ -197,7 +195,6 @@ ion-content {
     flex-direction: column;
     gap: 6px;
 
-    // Se tiver apenas 1 botão, no mobile podemos mudá-lo para linha se quiser
     @media (max-width: 768px) {
       flex-direction: row; 
     }
@@ -220,9 +217,7 @@ ion-content {
 ion-content {
   &::part(scroll) {
     &::-webkit-scrollbar {
-      display: none; /* Safari y Chrome (Mobile) */
+      display: none; 
     }
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE y Edge */
   }
 }

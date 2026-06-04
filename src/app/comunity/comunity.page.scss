@@ -1,10 +1,10 @@
-/* Definição de cores personalizadas para este ecrã */
+
 :host {
   --yellow-brand: #e5b611;
   --bg-black: #000000;
 }
 
-/* Garante que o cabeçalho, toolbar e content são totalmente pretos */
+
 ion-header, 
 ion-content {
   background: var(--bg-black);
@@ -19,7 +19,6 @@ ion-toolbar {
   --padding-end: 12px;
 }
 
-/* Container para alinhar a pesquisa e o botão lado a lado */
 .header-container {
   display: flex;
   align-items: center;
@@ -28,7 +27,7 @@ ion-toolbar {
   gap: 10px;
 }
 
-/* Customização da barra de pesquisa (Fundo claro) */
+/* Customização da barra de pesquisa */
 .custom-searchbar {
   --background: #f2f2f2 !important;
   --color: #333333 !important;
@@ -37,7 +36,7 @@ ion-toolbar {
   --border-radius: 25px !important;
   padding: 0;
   margin: 0;
-  flex: 1; /* Faz a barra ocupar todo o espaço disponível */
+  flex: 1; 
   height: 44px;
 }
 
@@ -57,11 +56,11 @@ ion-toolbar {
   height: 44px;
   margin: 0;
   position: relative;
-  overflow: visible; /* Permite que o ponto amarelo saia ligeiramente do botão */
+  overflow: visible; 
 
   ion-icon {
     font-size: 22px;
-    color: #000000 !important; /* Garante o ícone preto dentro do botão branco */
+    color: #000000 !important; 
   }
 
   /* O ponto amarelo de notificação ativa */

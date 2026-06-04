@@ -33,7 +33,7 @@ ion-content {
   }
 }
 
-// Bloque de tarjetas superiores (Estadísticas)
+// Bloque de tarjetas superiores 
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -94,7 +94,7 @@ ion-content {
     flex: 1;
   }
 
-  // Círculo del icono (Dorado con fondo negro)
+  // Círculo del icono
   .icon-container {
     width: 48px;
     height: 48px;
@@ -133,7 +133,7 @@ ion-content {
     }
   }
 
-  // Bloque derecho (Precios y botones)
+  // Bloque derecho 
   .card-right {
     display: flex;
     flex-direction: column;
