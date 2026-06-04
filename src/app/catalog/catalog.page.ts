@@ -1,36 +1,25 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import {
-  IonContent,
-  IonHeader,
-  IonTitle,
-  IonToolbar,
-  IonButton,
-  IonLabel,
-  IonSelectOption,
-  IonItem,
-  ModalController,
-} from '@ionic/angular/standalone';
-
-import { HeaderComponent } from 'src/app/components/header/header.component';
-import { FooterComponent } from '../components/footer/footer.component';
-import { AlertModalComponent } from '../components/alert-modal/alert-modal.component';
-import { RouterLink } from '@angular/router';   // ⬅️ NOVO
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {
-  IonContent, IonButton, IonLabel,
-  IonSelectOption, IonItem, IonSelect,
-  IonSpinner, IonText, IonInput
+  IonContent,
+  IonButton,
+  IonLabel,
+  IonSelectOption,
+  IonItem,
+  IonSelect,
+  IonSpinner,
+  IonText,
+  IonInput,
+  ModalController,
 } from '@ionic/angular/standalone';
 import { Subscription } from 'rxjs';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 import { HeaderComponent } from '../components/header/header.component';
 import { FooterComponent } from '../components/footer/footer.component';
 import { CardComponent } from '../components/card/card.component';
+import { AlertModalComponent } from '../components/alert-modal/alert-modal.component';
 import { CoinService } from '../services/coin.service';
 import { Coin } from '../models/coin.model';
 
@@ -40,39 +29,22 @@ import { Coin } from '../models/coin.model';
   styleUrls: ['./catalog.page.scss'],
   standalone: true,
   imports: [
-    IonContent,
-    IonHeader,
-    IonTitle,
-    IonToolbar,
     CommonModule,
     FormsModule,
-    HeaderComponent,
-    FooterComponent,
+    RouterLink,
+    IonContent,
     IonButton,
     IonLabel,
     IonSelectOption,
     IonItem,
-    RouterLink,
+    IonSelect,
+    IonSpinner,
+    IonText,
+    IonInput,
+    HeaderComponent,
+    FooterComponent,
+    CardComponent,
   ],
-})
-export class CatalogPage {
-  selectedPO: string = '';
-  PO = [
-    { id: 'btc', name: 'Bitcoin' },
-    { id: 'eth', name: 'Ethereum' },
-    { id: 'usd', name: 'US Dollar' },
-    { id: 'eur', name: 'Euro' },
-    { id: 'gbp', name: 'British Pound' },
-  ];
-  coins: any;
-
-  constructor(private modalCtrl: ModalController) {}
-    CommonModule, FormsModule,
-    IonContent, IonButton, IonLabel,
-    IonSelectOption, IonItem, IonSelect,
-    IonSpinner, IonText, IonInput,
-    HeaderComponent, FooterComponent, CardComponent
-  ]
 })
 export class CatalogPage implements OnInit, OnDestroy {
 
@@ -96,7 +68,11 @@ export class CatalogPage implements OnInit, OnDestroy {
 
   private subs = new Subscription();
 
-  constructor(private coinService: CoinService, private router: Router) {}
+  constructor(
+    private coinService: CoinService,
+    private router: Router,
+    private modalCtrl: ModalController,
+  ) {}
 
   ngOnInit(): void {
     this.subs.add(
@@ -117,7 +93,10 @@ export class CatalogPage implements OnInit, OnDestroy {
     this.subs.unsubscribe();
   }
 
-  /** Abre o modal "Novo alerta de moeda" */
+  onCardAction(coin: Coin): void {
+    this.router.navigate(['/coin-detail', coin.id]);
+  }
+
   async abrirAlerta() {
     const modal = await this.modalCtrl.create({
       component: AlertModalComponent,
