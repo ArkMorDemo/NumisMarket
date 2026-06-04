@@ -1,13 +1,88 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>details</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header></app-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">details</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div *ngIf="isLoading" class="state-center">
+    <ion-spinner name="crescent"></ion-spinner>
+  </div>
+
+  <div *ngIf="!isLoading && !coin" class="state-center">
+    <ion-text color="medium"><p>Moeda não encontrada.</p></ion-text>
+  </div>
+
+  <div *ngIf="!isLoading && coin" class="details-container">
+
+    <!-- LEFT COLUMN -->
+    <div class="col-left">
+
+      <!-- Main image -->
+      <div class="main-image-wrap">
+        <img [src]="selectedImage" [alt]="coin!.name" class="main-image" />
+      </div>
+
+      <!-- Thumbnails -->
+      <div class="thumbnails">
+        <img
+          *ngFor="let t of [coin!.image, coin!.image, coin!.image]"
+          [src]="t"
+          [alt]="coin!.name"
+          class="thumb"
+          (click)="selectImage(t)" />
+      </div>
+
+      <!-- Seller description -->
+      <div class="description-box">
+        <p class="desc-title">Descrição do vendedor</p>
+        <p class="desc-text">
+          Moeda em excelente estado de conservação. Peça autêntica com certificado de autenticidade.
+          Armazenada em cápsula de proteção. Envio registado com seguro incluído.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="col-right">
+
+      <!-- Title -->
+      <h1 class="coin-title">{{ coin!.name }}</h1>
+      <p class="coin-subtitle">{{ subtitle }}</p>
+
+      <!-- Price + badges -->
+      <div class="price-row">
+        <span class="price">{{ price }}</span>
+        <span class="badge badge-green">Venda</span>
+        <span class="badge badge-gold">{{ coin!.type === 'comemorativa' ? 'MBC' : coin!.type === 'prova' ? 'PF' : 'BC' }}</span>
+      </div>
+
+      <!-- Details table -->
+      <table class="details-table">
+        <tr *ngFor="let row of qualityRows">
+          <td class="td-label">{{ row.label }}</td>
+          <td class="td-value">{{ row.value }}</td>
+        </tr>
+      </table>
+
+      <!-- Seller row -->
+      <div class="seller-row">
+        <div class="seller-avatar">{{ seller.initials }}</div>
+        <div class="seller-info">
+          <span class="seller-name">{{ seller.name }}</span>
+          <span class="seller-rating">
+            ★★★★★ · {{ seller.rating }} · {{ seller.reviews }} &nbsp;·&nbsp; {{ seller.sales }} vendas
+          </span>
+        </div>
+        <ion-button fill="outline" class="btn-message">
+          <ion-icon name="chatbubble-outline"></ion-icon>
+        </ion-button>
+      </div>
+
+      <!-- Action buttons -->
+      <ion-button expand="block" class="btn-action btn-buy">Comprar agora</ion-button>
+      <ion-button expand="block" fill="outline" class="btn-action btn-trade">Propor troca</ion-button>
+      <ion-button expand="block" fill="outline" class="btn-action btn-fav">Adicionar aos favoritos</ion-button>
+
+    </div>
+  </div>
+
+  <app-footer />
 </ion-content>
