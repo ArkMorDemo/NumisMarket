@@ -1,2 +1,5 @@
 1-Gerou num primeiro momento o CSS nas paginas de Compra e Comunidade, logo foi adaptado por nós
-2-Criou a informação dos JSON(Cnversas e Moedas), mas as respectivas imagem foram procurada pelo integrante de grupo
+
+2-Criou a informação dos JSON(Cnversas e Moedas), mas as respectivas imagem foram procurada pelo integrante de grupo.
+
+3-Foi de grãp ajuda para passar os dados do Json os arquivos Ts. e logo aos HTML
