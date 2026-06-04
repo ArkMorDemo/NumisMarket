@@ -1,9 +1,11 @@
-<app-header [title]="'NumisMarket'"></app-header>
+<app-header></app-header>
 
 <ion-content [fullscreen]="true">
   <div id="container-1">
+
+    <!-- Box 1: Title + Action Buttons -->
     <div id="Box-1">
-      <h2 style="width: 100%;">Catálogo de moedas</h2>
+      <h1>Catálogo</h1>
       <div class="button-container">
         <ion-button class="bt-a"><img class="img-svg" src="../../assets/icon/notifications_24dp_03A125_FILL0_wght400_GRAD0_opsz24.svg"></ion-button>
         <ion-button class="bt-b" fill="outline"  >
@@ -12,24 +14,89 @@
         </ion-button>
       </div>
     </div>
+
+    <!-- Box 2: Filters -->
     <div id="Box-2">
-      <div class="a">
-        <ion-item>
-          <ion-label>Pais de origem</ion-label>
-          <ion-select [(ngModel)]="selectedPO" (ionChange)="onPOChange($event)">
-            <ion-select-option *ngFor="let coin of coins" [value]="coin.id">
-              {{ coin.name }}
-            </ion-select-option>
+
+      <!-- Row 1: three filter selects -->
+      <div class="filters-row">
+
+        <div class="filter-col">
+          <span class="filter-label">País de origem</span>
+          <ion-select [(ngModel)]="selectedCountry" (ionChange)="onCountryChange($event)"
+                      placeholder="Todos" interface="popover" class="filter-select">
+            <ion-select-option value="">Todos</ion-select-option>
+            <ion-select-option *ngFor="let c of countries" [value]="c.id">{{ c.name }}</ion-select-option>
           </ion-select>
-        </ion-item>
-        <div *ngIf="selectedPO" style="margin-top: 20px; padding: 10px; border-radius: 8px;">
-          <p>{{ selectedPO }}</p>
         </div>
-        <div>Tipo</div>
-        <div>Época  </div>
+
+        <div class="filter-col">
+          <span class="filter-label">Tipo</span>
+          <ion-select [(ngModel)]="selectedType" (ionChange)="onTypeChange($event)"
+                      placeholder="Todos" interface="popover" class="filter-select">
+            <ion-select-option value="">Todos</ion-select-option>
+            <ion-select-option value="comum">Comum</ion-select-option>
+            <ion-select-option value="comemorativa">Comemorativa</ion-select-option>
+            <ion-select-option value="prova">Prova</ion-select-option>
+          </ion-select>
+        </div>
+
+        <div class="filter-col">
+          <span class="filter-label">Época</span>
+          <ion-select [(ngModel)]="selectedEra" (ionChange)="onEraChange($event)"
+                      placeholder="Todas" interface="popover" class="filter-select">
+            <ion-select-option value="">Todas</ion-select-option>
+            <ion-select-option value="contemporanea">Contemporânea</ion-select-option>
+            <ion-select-option value="moderna">Moderna</ion-select-option>
+            <ion-select-option value="antiga">Antiga</ion-select-option>
+          </ion-select>
+        </div>
+
       </div>
-      <div class="b"></div>
+
+      <!-- Row 2: search -->
+      <div class="filters-search-row">
+        <div class="filter-col filter-col--search">
+          <span class="filter-label">Pesquisar</span>
+          <ion-input [(ngModel)]="searchName" (ionInput)="onSearchName($event)"
+                     placeholder="ex: 50" class="filter-input">
+          </ion-input>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Box 3: Results -->
+    <div id="Box-3">
+
+      <!-- Loading state -->
+      <div *ngIf="isLoading" class="state-center">
+        <ion-spinner name="crescent"></ion-spinner>
+        <ion-text color="medium"><p>A carregar moedas...</p></ion-text>
+      </div>
+
+      <!-- Error state -->
+      <div *ngIf="!isLoading && errorMsg" class="state-center">
+        <ion-text color="danger"><p>{{ errorMsg }}</p></ion-text>
+      </div>
+
+      <!-- Empty state -->
+      <div *ngIf="!isLoading && !errorMsg && coins.length === 0" class="state-center">
+        <ion-text color="medium"><p>Nenhuma moeda encontrada.</p></ion-text>
+      </div>
+
+      <!-- Coin cards grid -->
+      <div *ngIf="!isLoading && coins.length > 0" class="cards-grid">
+        <app-card
+          *ngFor="let coin of coins"
+          [name]="coin.name"
+          [image]="coin.image"
+          [qualities]="coin.qualities"
+          [buttonText]="'Ver detalhe'"
+          (buttonClicked)="onCardAction(coin)">
+        </app-card>
+      </div>
+
     </div>
   </div>
-  <app-footer/>
 </ion-content>

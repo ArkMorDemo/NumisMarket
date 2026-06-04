@@ -1,0 +1,290 @@
+[
+  {
+    "id": "pt-escudo-1",
+    "name": "Escudo Português 1963",
+    "image": "assets/img/Coin.png",
+    "country": "pt",
+    "type": "comum",
+    "era": "contemporanea",
+    "qualities": ["País: Portugal", "Ano: 1963", "Material: Bronze", "Diâmetro: 26mm", "Peso: 8g"]
+  },
+  {
+    "id": "pt-escudo-2",
+    "name": "Escudo Português 1910",
+    "image": "assets/img/Coin.png",
+    "country": "pt",
+    "type": "comemorativa",
+    "era": "moderna",
+    "qualities": ["País: Portugal", "Ano: 1910", "Material: Prata", "Diâmetro: 28mm", "Peso: 10g"]
+  },
+  {
+    "id": "pt-escudo-3",
+    "name": "5 Escudos 1932",
+    "image": "assets/img/Coin.png",
+    "country": "pt",
+    "type": "prova",
+    "era": "moderna",
+    "qualities": ["País: Portugal", "Ano: 1932", "Material: Prata", "Diâmetro: 30mm", "Peso: 12g"]
+  },
+  {
+    "id": "pt-real-1",
+    "name": "Real Português Séc. XV",
+    "image": "assets/img/Coin.png",
+    "country": "pt",
+    "type": "comum",
+    "era": "antiga",
+    "qualities": ["País: Portugal", "Ano: ~1450", "Material: Ouro", "Diâmetro: 20mm", "Peso: 3.5g"]
+  },
+  {
+    "id": "pt-euro-1",
+    "name": "2€ Comemorativo Fernão Magalhães 2019",
+    "image": "assets/img/Coin.png",
+    "country": "pt",
+    "type": "comemorativa",
+    "era": "contemporanea",
+    "qualities": ["País: Portugal", "Ano: 2019", "Material: Bimetálico", "Diâmetro: 25.75mm", "Peso: 8.5g"]
+  },
+  {
+    "id": "pt-euro-2",
+    "name": "2€ Comemorativo República 2010",
+    "image": "assets/img/Coin.png",
+    "country": "pt",
+    "type": "comemorativa",
+    "era": "contemporanea",
+    "qualities": ["País: Portugal", "Ano: 2010", "Material: Bimetálico", "Diâmetro: 25.75mm", "Peso: 8.5g"]
+  },
+  {
+    "id": "br-cruzeiro-1",
+    "name": "Cruzeiro Brasileiro 1942",
+    "image": "assets/img/Coin.png",
+    "country": "br",
+    "type": "comemorativa",
+    "era": "moderna",
+    "qualities": ["País: Brasil", "Ano: 1942", "Material: Cuproníquel", "Diâmetro: 22mm", "Peso: 6g"]
+  },
+  {
+    "id": "br-real-1",
+    "name": "1 Real Brasileiro 1994",
+    "image": "assets/img/Coin.png",
+    "country": "br",
+    "type": "comum",
+    "era": "contemporanea",
+    "qualities": ["País: Brasil", "Ano: 1994", "Material: Aço Inoxidável", "Diâmetro: 24mm", "Peso: 7g"]
+  },
+  {
+    "id": "br-pataca-1",
+    "name": "Pataca Brasileira 1816",
+    "image": "assets/img/Coin.png",
+    "country": "br",
+    "type": "prova",
+    "era": "moderna",
+    "qualities": ["País: Brasil", "Ano: 1816", "Material: Prata", "Diâmetro: 38mm", "Peso: 27g"]
+  },
+  {
+    "id": "br-vintém-1",
+    "name": "Vintém Imperial 1871",
+    "image": "assets/img/Coin.png",
+    "country": "br",
+    "type": "comum",
+    "era": "moderna",
+    "qualities": ["País: Brasil", "Ano: 1871", "Material: Bronze", "Diâmetro: 20mm", "Peso: 4g"]
+  },
+  {
+    "id": "es-peseta-1",
+    "name": "Peseta Espanhola 1975",
+    "image": "assets/img/Coin.png",
+    "country": "es",
+    "type": "comum",
+    "era": "contemporanea",
+    "qualities": ["País: Espanha", "Ano: 1975", "Material: Alumínio-Bronze", "Diâmetro: 21mm", "Peso: 5.5g"]
+  },
+  {
+    "id": "es-peseta-2",
+    "name": "5 Pesetas 1949",
+    "image": "assets/img/Coin.png",
+    "country": "es",
+    "type": "comemorativa",
+    "era": "moderna",
+    "qualities": ["País: Espanha", "Ano: 1949", "Material: Níquel", "Diâmetro: 23mm", "Peso: 7g"]
+  },
+  {
+    "id": "es-real-1",
+    "name": "8 Reales Carlos III 1772",
+    "image": "assets/img/Coin.png",
+    "country": "es",
+    "type": "prova",
+    "era": "moderna",
+    "qualities": ["País: Espanha", "Ano: 1772", "Material: Prata", "Diâmetro: 39mm", "Peso: 27g"]
+  },
+  {
+    "id": "es-maravedi-1",
+    "name": "Maravedi Castelhano Séc. XIV",
+    "image": "assets/img/Coin.png",
+    "country": "es",
+    "type": "comum",
+    "era": "antiga",
+    "qualities": ["País: Espanha", "Ano: ~1350", "Material: Electrum", "Diâmetro: 18mm", "Peso: 2.5g"]
+  },
+  {
+    "id": "es-euro-1",
+    "name": "2€ Comemorativo Cervantes 2005",
+    "image": "assets/img/Coin.png",
+    "country": "es",
+    "type": "comemorativa",
+    "era": "contemporanea",
+    "qualities": ["País: Espanha", "Ano: 2005", "Material: Bimetálico", "Diâmetro: 25.75mm", "Peso: 8.5g"]
+  },
+  {
+    "id": "fr-franc-1",
+    "name": "Franco Francês 1960",
+    "image": "assets/img/Coin.png",
+    "country": "fr",
+    "type": "prova",
+    "era": "contemporanea",
+    "qualities": ["País: França", "Ano: 1960", "Material: Prata", "Diâmetro: 24mm", "Peso: 7g"]
+  },
+  {
+    "id": "fr-franc-2",
+    "name": "20 Francos Napoleão 1815",
+    "image": "assets/img/Coin.png",
+    "country": "fr",
+    "type": "comemorativa",
+    "era": "moderna",
+    "qualities": ["País: França", "Ano: 1815", "Material: Ouro", "Diâmetro: 21mm", "Peso: 6.45g"]
+  },
+  {
+    "id": "fr-denier-1",
+    "name": "Denier Carolíngio Séc. IX",
+    "image": "assets/img/Coin.png",
+    "country": "fr",
+    "type": "comum",
+    "era": "antiga",
+    "qualities": ["País: França", "Ano: ~850", "Material: Prata", "Diâmetro: 19mm", "Peso: 1.7g"]
+  },
+  {
+    "id": "fr-euro-1",
+    "name": "2€ Comemorativo Simone Veil 2018",
+    "image": "assets/img/Coin.png",
+    "country": "fr",
+    "type": "comemorativa",
+    "era": "contemporanea",
+    "qualities": ["País: França", "Ano: 2018", "Material: Bimetálico", "Diâmetro: 25.75mm", "Peso: 8.5g"]
+  },
+  {
+    "id": "fr-franc-3",
+    "name": "5 Francos Hércules 1873",
+    "image": "assets/img/Coin.png",
+    "country": "fr",
+    "type": "prova",
+    "era": "moderna",
+    "qualities": ["País: França", "Ano: 1873", "Material: Prata", "Diâmetro: 37mm", "Peso: 25g"]
+  },
+  {
+    "id": "de-mark-1",
+    "name": "Marco Alemão 1950",
+    "image": "assets/img/Coin.png",
+    "country": "de",
+    "type": "comemorativa",
+    "era": "moderna",
+    "qualities": ["País: Alemanha", "Ano: 1950", "Material: Cobre-Níquel", "Diâmetro: 23mm", "Peso: 6.5g"]
+  },
+  {
+    "id": "de-mark-2",
+    "name": "5 Marcos de Prata 1934",
+    "image": "assets/img/Coin.png",
+    "country": "de",
+    "type": "prova",
+    "era": "moderna",
+    "qualities": ["País: Alemanha", "Ano: 1934", "Material: Prata", "Diâmetro: 29mm", "Peso: 13.88g"]
+  },
+  {
+    "id": "de-pfennig-1",
+    "name": "1 Pfennig 1873",
+    "image": "assets/img/Coin.png",
+    "country": "de",
+    "type": "comum",
+    "era": "moderna",
+    "qualities": ["País: Alemanha", "Ano: 1873", "Material: Cobre", "Diâmetro: 17mm", "Peso: 2g"]
+  },
+  {
+    "id": "de-thaler-1",
+    "name": "Thaler Saxónico 1620",
+    "image": "assets/img/Coin.png",
+    "country": "de",
+    "type": "comemorativa",
+    "era": "moderna",
+    "qualities": ["País: Alemanha", "Ano: 1620", "Material: Prata", "Diâmetro: 40mm", "Peso: 29g"]
+  },
+  {
+    "id": "de-euro-1",
+    "name": "2€ Comemorativo Brandemburgo 2020",
+    "image": "assets/img/Coin.png",
+    "country": "de",
+    "type": "comemorativa",
+    "era": "contemporanea",
+    "qualities": ["País: Alemanha", "Ano: 2020", "Material: Bimetálico", "Diâmetro: 25.75mm", "Peso: 8.5g"]
+  },
+  {
+    "id": "de-pfennig-2",
+    "name": "10 Pfennig RDA 1968",
+    "image": "assets/img/Coin.png",
+    "country": "de",
+    "type": "comum",
+    "era": "contemporanea",
+    "qualities": ["País: Alemanha", "Ano: 1968", "Material: Alumínio", "Diâmetro: 21mm", "Peso: 1.7g"]
+  },
+  {
+    "id": "uk-penny-1",
+    "name": "Penny Britânico 1899",
+    "image": "assets/img/Coin.png",
+    "country": "uk",
+    "type": "prova",
+    "era": "antiga",
+    "qualities": ["País: Reino Unido", "Ano: 1899", "Material: Bronze", "Diâmetro: 30mm", "Peso: 9.4g"]
+  },
+  {
+    "id": "uk-shilling-1",
+    "name": "Shilling Jorge V 1926",
+    "image": "assets/img/Coin.png",
+    "country": "uk",
+    "type": "comum",
+    "era": "moderna",
+    "qualities": ["País: Reino Unido", "Ano: 1926", "Material: Prata", "Diâmetro: 23mm", "Peso: 5.65g"]
+  },
+  {
+    "id": "uk-crown-1",
+    "name": "Crown Isabel II 1953",
+    "image": "assets/img/Coin.png",
+    "country": "uk",
+    "type": "comemorativa",
+    "era": "contemporanea",
+    "qualities": ["País: Reino Unido", "Ano: 1953", "Material: Cobre-Níquel", "Diâmetro: 38mm", "Peso: 28g"]
+  },
+  {
+    "id": "uk-groat-1",
+    "name": "Groat Eduardo III Séc. XIV",
+    "image": "assets/img/Coin.png",
+    "country": "uk",
+    "type": "comum",
+    "era": "antiga",
+    "qualities": ["País: Reino Unido", "Ano: ~1360", "Material: Prata", "Diâmetro: 26mm", "Peso: 4.6g"]
+  },
+  {
+    "id": "uk-sovereign-1",
+    "name": "Sovereign Vitória 1887",
+    "image": "assets/img/Coin.png",
+    "country": "uk",
+    "type": "prova",
+    "era": "moderna",
+    "qualities": ["País: Reino Unido", "Ano: 1887", "Material: Ouro", "Diâmetro: 22mm", "Peso: 7.99g"]
+  },
+  {
+    "id": "uk-pound-1",
+    "name": "2£ Comemorativo DNA 2003",
+    "image": "assets/img/Coin.png",
+    "country": "uk",
+    "type": "comemorativa",
+    "era": "contemporanea",
+    "qualities": ["País: Reino Unido", "Ano: 2003", "Material: Bimetálico", "Diâmetro: 28.4mm", "Peso: 12g"]
+  }
+]

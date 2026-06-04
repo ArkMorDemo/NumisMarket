@@ -1,83 +1,38 @@
-ion-header {
-  background-color: #000000;
+ion-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
 }
 
-ion-toolbar {
-  padding: 0 !important;
-  background-color: #000000;
-  --background: #000000;
-  --border-color: rgba(255, 255, 255, 0.1);
+ion-tab-bar {
+  --background: linear-gradient(to bottom, rgb(74, 74, 74), black);
+  --border: 1px solid rgba(255, 255, 255, 0.255);
+  height: 60px;
 }
 
-.title {
-  display: flex;
-  align-items: center;
-  width: fit-content;
-  padding: 0 16px;
-  gap: 10px;
-}
+ion-tab-button {
+  --color: rgba(255, 255, 255, 0.5);
+  --color-selected: #EFB810;
+  --ripple-color: #EFB810;
+  transition: color 0.3s ease;
 
-.left-section {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-}
+  ion-icon {
+    font-size: 22px;
+  }
 
-.right-section {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
+  ion-label {
+    font-size: 11px;
+    font-weight: 500;
+  }
 
-ion-title {
-  display: flex;
-  align-items: center;
-  width: fit-content;
-  color: #EFB810;
-  font-weight: bolder;
-  cursor: pointer;
-}
+  &.active,
+  &:hover {
+    --color: #EFB810;
+  }
 
-ion-buttons {
-  display: flex;
-  gap: 0;
-  flex: 0 0 auto;
-}
-
-ion-button {
-  color: #EFB810;
-  transition: all 0.3s ease;
-
-  &.active {
+  &.active ion-icon {
     color: #EFB810;
-    font-weight: 600;
-    border-bottom: 3px solid #EFB810;
   }
-
-  &:hover {
-    color: #EFB810;
-    border-bottom: 3px solid #EFB810;
-  }
-}
-
-/* Login Button - No background, default text color */
-.login-btn {
-   
-  &:hover {
-    --background: #d4a00e;
-    border: none;
-  }
-}
-
-/* Register Button - Golden background, black text */
-.register-btn {
-  font-weight: bold;
-  &:hover {
-    --background: #d4a00e;
-    border: none;
-  }
-}
-
-.icon-img-title {
-  width: 30px;
 }

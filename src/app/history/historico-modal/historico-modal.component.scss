@@ -33,7 +33,7 @@ ion-content {
   }
 }
 
-// Bloque de tarjetas superiores (Estadísticas)
+// Bloque de tarjetas superiores 
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -57,7 +57,7 @@ ion-content {
     }
     .stat-value {
       color: #ffffff;
-      font-size: 1.1rem;
+      font-size: 0.95rem;
       font-weight: bold;
     }
     .stat-sub {
@@ -94,7 +94,7 @@ ion-content {
     flex: 1;
   }
 
-  // Círculo del icono (Dorado con fondo negro)
+  // Círculo del icono
   .icon-container {
     width: 48px;
     height: 48px;
@@ -133,7 +133,7 @@ ion-content {
     }
   }
 
-  // Bloque derecho (Precios y botones)
+  // Bloque derecho 
   .card-right {
     display: flex;
     flex-direction: column;
@@ -205,3 +205,4 @@ ion-content {
     -ms-overflow-style: none; /* IE y Edge */
   }
 }
+
