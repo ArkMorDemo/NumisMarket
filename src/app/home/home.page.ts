@@ -4,12 +4,13 @@ import { HeaderComponent } from 'src/app/components/header/header.component';
 import { FooterComponent } from 'src/app/components/footer/footer.component';
 import { CardComponent } from 'src/app/components/card/card.component';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
-  imports: [IonContent, HeaderComponent, FooterComponent, IonButton, CardComponent, CommonModule],
+  imports: [IonContent, HeaderComponent, FooterComponent, IonButton, CardComponent, CommonModule, RouterLink,],
   standalone: true,
 })
 export class HomePage implements OnInit, OnDestroy {
