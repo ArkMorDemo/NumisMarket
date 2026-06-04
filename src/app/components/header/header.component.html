@@ -1,40 +1,29 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-      <div slot="start">
-        <ion-title routerLink="/home">
-          <div class="title"><img class="icon-img-title" src="../../assets/img/Coin.png"><div>{{ title }}</div></div>
-        </ion-title>
-      </div>
-      <div slot="start">
-        <ion-buttons>
-          <ion-button routerLink="/catalog" routerLinkActive="active">
-            Catálogo
-          </ion-button>
-          <ion-button routerLink="/history" routerLinkActive="active">
-            Compras
-          </ion-button>
-          <ion-button routerLink="/bidding" routerLinkActive="active">
-            Leilões
-          </ion-button>
-          <ion-button routerLink="/grade" routerLinkActive="active">
-            Avaliação
-          </ion-button>
-          <ion-button routerLink="/sell" routerLinkActive="active">
-            Vender
-          </ion-button>
-          <ion-button routerLink="/comunity" routerLinkActive="active">
-            Comunidade
-          </ion-button>
-        </ion-buttons>
-      </div>
-      <div slot="end">
-        
-        <ion-button class="login-btn" color="dark" routerLink="/login">
-          Entrar
-        </ion-button>
-        <ion-button class="register-btn" routerLink="/register">
-          Criar conta
-        </ion-button>
-      </div>
-  </ion-toolbar>
-</ion-header>
+<ion-footer>
+  <ion-tab-bar>
+
+    <ion-tab-button routerLink="/home" routerLinkActive="active">
+      <ion-icon name="home"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button routerLink="/catalog" routerLinkActive="active">
+      <ion-icon name="book"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button routerLink="/history" routerLinkActive="active">
+      <ion-icon name="cart"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button routerLink="/bidding" routerLinkActive="active">
+      <ion-icon name="cash"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button routerLink="/comunity" routerLinkActive="active">
+      <ion-icon name="chatbox"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button routerLink="/grade" routerLinkActive="active">
+      <ion-icon name="star"></ion-icon>
+    </ion-tab-button>
+
+  </ion-tab-bar>
+</ion-footer>

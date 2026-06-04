@@ -1,12 +1,41 @@
 #container-1 {
   display: flex;
-  padding: 64px ;
+  padding: 64px;
+}
+
+ion-content {
+  --padding-bottom: calc(56px + 24px + env(safe-area-inset-bottom));
+}
+
+// Title block — coin + NumisMarket name
+#title-block {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 12px;
+  padding-bottom: 12px ;
+  width: 100%;
+  border-bottom: 2px solid var(--ion-color-primary);
+}
+
+#title-coin {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+}
+
+#site-title {
+  font-size: 42px;
+  font-weight: 800;
+  color: var(--ion-color-primary);
+  margin: 0;
+  letter-spacing: 1px;
 }
 
 #container-1 p {
   font-size: 16px;
   line-height: 22px;
-
+  color: var(--ion-color-light);
   margin: 0;
 }
 
@@ -20,16 +49,17 @@
   padding: 80px 10% 0 0;
 }
 
-#Box-1 strong.a{
+#Box-1 strong.a {
   font-size: 60px;
+  color: var(--ion-color-light);
 }
 
-#Box-1 strong.b{
+#Box-1 strong.b {
   font-size: 60px;
   color: var(--ion-color-primary);
 }
 
-#Box-1 p.a{
+#Box-1 p.a {
   font-size: 25px;
   line-height: 30px;
   padding: 10px 0 30px 0;
@@ -57,18 +87,66 @@
   width: 100%;
   display: block;
   text-align: center;
+  color: var(--ion-color-light);
 }
 
 #container-2 span {
   color: var(--ion-color-primary);
 }
 
-//Cards
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  padding: 20px;
+// Card Slider
+.card-slider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.card-slide {
+  display: none;
+  width: 100%;
+  max-width: 400px;
+  animation: fadeSlide 0.5s ease;
+
+  &.active {
+    display: block;
+  }
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--ion-color-medium);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+
+    &.active {
+      background-color: var(--ion-color-primary);
+      transform: scale(1.3);
+    }
+
+    &:hover {
+      background-color: var(--ion-color-primary-tint);
+    }
+  }
 }
 
 #container-3 {
@@ -84,13 +162,168 @@
   width: 100%;
   display: block;
   text-align: center;
+  color: var(--ion-color-light);
 }
 
-#container-3 p, li {
+#container-3 p,
+li {
   font-size: 20px;
   text-align: justify;
+  color: var(--ion-color-light);
 }
 
 #container-3 span {
   color: var(--ion-color-primary);
+}
+
+// ─── Tablet (max 768px) ───────────────────────────────────────────────────────
+@media (max-width: 768px) {
+  #container-1 {
+    flex-direction: column;
+    padding: 32px 24px;
+    align-items: center;
+    text-align: center;
+  }
+
+  #title-block {
+    justify-content: center;
+  }
+
+  #site-title {
+    font-size: 32px;
+  }
+
+  #title-coin {
+    width: 44px;
+    height: 44px;
+  }
+
+  #container-1 #Box-1 {
+    padding: 0;
+    align-items: center;
+  }
+
+  #Box-1 strong.a,
+  #Box-1 strong.b {
+    font-size: 40px;
+  }
+
+  #Box-1 p.a {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  #Box-1 div[style] {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  #container-2 {
+    padding: 20px 24px;
+  }
+
+  #container-2 strong {
+    font-size: 42px;
+  }
+
+  .card-slide {
+    max-width: 340px;
+  }
+
+  #container-3 {
+    flex-direction: column;
+    padding: 20px 24px;
+
+    div[style] {
+      width: 100% !important;
+    }
+  }
+
+  #container-3 strong {
+    font-size: 36px;
+  }
+
+  #container-3 p,
+  li {
+    font-size: 16px;
+  }
+}
+
+// ─── Mobile (max 480px) ───────────────────────────────────────────────────────
+@media (max-width: 480px) {
+  #container-1 {
+    padding: 24px 16px;
+  }
+
+  #site-title {
+    font-size: 26px;
+  }
+
+  #title-coin {
+    width: 36px;
+    height: 36px;
+  }
+
+  #Box-1 strong.a,
+  #Box-1 strong.b {
+    font-size: 30px;
+    text-align: center;
+  }
+
+  #Box-1 p.a {
+    font-size: 15px;
+    line-height: 22px;
+    text-align: center;
+  }
+
+  #Box-1 div[style] {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px !important;
+
+    ion-button {
+      width: 100%;
+    }
+  }
+
+  #container-2 {
+    padding: 16px;
+  }
+
+  #container-2 strong {
+    font-size: 30px;
+  }
+
+  .card-slide {
+    max-width: 100%;
+  }
+
+  #container-3 {
+    padding: 16px;
+  }
+
+  #container-3 strong {
+    font-size: 28px;
+  }
+
+  #container-3 p,
+  li {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  #container-3 ul {
+    padding-left: 20px;
+  }
+
+  #container-3 div[style*="display: flex"] {
+    flex-direction: column !important;
+    align-items: center;
+    padding: 20px 0 0 0 !important;
+    gap: 12px !important;
+
+    ion-button {
+      width: 100%;
+    }
+  }
 }
