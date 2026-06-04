@@ -4,17 +4,6 @@ import { HttpClient } from '@angular/common/http';
 import { IonContent, IonHeader, IonToolbar, IonSearchbar, IonButton, IonButtons, IonIcon, IonList, IonItem, IonAvatar, IonLabel, IonBadge} from '@ionic/angular/standalone';
 import { HeaderComponent } from 'src/app/components/header/header.component';
 import { FooterComponent } from '../components/footer/footer.component';
-import { addIcons } from 'ionicons';
-import { searchOutline, addOutline, notificationsOutline, personCircleOutline } from 'ionicons/icons';
-
-export interface Conversation {
-  id: number;
-  name: string;
-  message: string;
-  time: string;
-  avatar: string;
-  unread: number;
-}
 
 @Component({
   selector: 'app-comunity',

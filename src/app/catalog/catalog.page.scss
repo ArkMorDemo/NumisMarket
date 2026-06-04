@@ -1,62 +1,167 @@
+/* ===========================
+   Mobile-first Catalog Page
+   =========================== */
+
 #container-1 {
-    display: flex;
-    flex-direction: column;
-    padding: 64px ;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 16px;
 }
 
+/* --- Box 1: Header row --- */
 #container-1 #Box-1 {
-    width: 100%;
-    display: flex;
-}
-
-#container-1 #Box-1 div {
-    width: fit-content;
-    display: flex;
-} 
-
-#container-1 #Box-1 .button-container {
+  width: 100%;
   display: flex;
   align-items: center;
-  gap: 0;  /* No gap between buttons */
-}
+  justify-content: space-between;
 
-#container-1 #Box-1 .bt-a {
+  h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0;
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .button-container {
     display: flex;
     align-items: center;
-    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .bt-a {
+    --padding-start: 8px;
+    --padding-end: 8px;
+    --border-radius: 12px;
+    --border-color: #000;
+    --border-width: 2px;
+    --border-style: solid;
     position: relative;
     z-index: 10;
-    margin-right: -25px;
+    margin-right: -16px;
 
-    --padding-start: 10px;
-    --padding-end: 10px; 
-    --border-radius: 15px;
-    --border-color: #000000;
-    --border-width: 5px;
-    --border-style: solid;
-} 
+    .img-svg { width: 22px; height: 22px; }
+  }
 
-#container-1 #Box-1 .bt-a .img-svg {
-  width: 35px;
-  height: auto;
+  .bt-b {
+    --padding-start: 28px;
+    --padding-end: 14px;
+    --border-radius: 12px;
+    font-size: 0.8rem;
+
+    span { white-space: nowrap; margin-left: 4px; }
+    img  { width: 18px; height: 18px; }
+  }
 }
 
-#container-1 #Box-1 .bt-b{
-    --padding-start: 35px;
-    --padding-end: 30px; 
-}
-
+/* --- Box 2: Filters --- */
 #container-1 #Box-2 {
-    background-color: var(--ion-color-primary);
-    border-radius: 15px;
-    width: 100%;
-    padding: 10px 20px ;
+  background-color: var(--ion-color-primary);
+  border-radius: 16px;
+  padding: 10px 12px;
+
+  /* Row 1: three selects side by side */
+  .filters-row {
     display: flex;
-    color: var(--ion-color-dark);
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 8px;
+  }
+
+  /* Row 2: full-width search */
+  .filters-search-row {
+    display: flex;
+    flex-direction: row;
+    margin-top: 8px;
+  }
+
+  .filter-col {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .filter-col--search {
+    flex: 1;
+  }
+
+  .filter-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #000000;
+    padding-left: 2px;
+    white-space: nowrap;
+  }
+
+  .filter-select {
+    --placeholder-color: #000000;
+    --color: #000000;
+    --highlight-color: #EFB810;
+    --border-width: 0;
+    color: #000000;
+    background: #000000;
+    border-radius: 8px;
+    padding: 6px 8px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    width: 100%;
+    min-height: 36px;
+
+    &::part(text)        { color: #EFB810; }
+    &::part(icon)        { color: #EFB810; }
+    &::part(placeholder) { color: #EFB810; opacity: 0.8; }
+    &::part(container)   { padding: 0; }
+    &::part(highlight)   { color: #EFB810; }
+  }
+
+  ion-select-popover ion-radio.radio-checked,
+  ion-select-popover .item-radio-checked {
+    --color-checked: #EFB810;
+    color: #EFB810;
+  }
+
+  .filter-input {
+    --placeholder-color: #888888;
+    --color: var(--ion-color-primary);
+    --background: #000000;
+    --padding-start: 8px;
+    --padding-end: 8px;
+    --padding-top: 6px;
+    --padding-bottom: 6px;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    min-height: 36px;
+    width: 100%;
+    overflow: hidden;
+
+    &::part(native) {
+      color: var(--ion-color-primary);
+      background: #000000;
+      border-radius: 8px;
+    }
+  }
 }
 
-#container-1 #Box-2 .a{
-    --padding-start: 35px;
-    --padding-end: 30px; 
-}
+/* --- Box 3: Results --- */
+#container-1 #Box-3 {
+  .state-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 16px;
+    gap: 8px;
+  }
 
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+  }
+}

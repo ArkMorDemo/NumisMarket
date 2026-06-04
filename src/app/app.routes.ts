@@ -43,7 +43,7 @@ export const routes: Routes = [
     loadComponent: () => import('./grade/grade.page').then( m => m.GradePage)
   },
   {
-    path: 'details',
+    path: 'details/:id',
     loadComponent: () => import('./details/details.page').then( m => m.DetailsPage)
   },  {
     path: 'account',

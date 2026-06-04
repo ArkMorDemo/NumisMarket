@@ -1,0 +1,221 @@
+$gold:  #EFB810;
+$dark:  #1a1a1a;
+$panel: #2a2a2a;
+$text:  #ffffff;
+$muted: #888888;
+$green: #03A125;
+
+/* ── Layout ─────────────────────────────────────── */
+.state-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+
+.details-container {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 24px;
+  padding: 20px 24px;
+  max-width: 960px;
+  margin: 0 auto;
+  color: $text;
+
+  @media (max-width: 680px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Left column ────────────────────────────────── */
+.col-left {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.main-image-wrap {
+  background: $panel;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  aspect-ratio: 1;
+}
+
+.main-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.thumbnails {
+  .thumb {
+    flex: 1;
+    aspect-ratio: 1;
+    object-fit: contain;
+    background: $panel;
+    border-radius: 8px;
+    padding: 6px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.2s;
+
+    &:hover { border-color: $gold; }
+  }
+
+  .thumb:nth-child(n+1) {
+    width: 30%;
+    margin-right: 3%;
+    object-fit: cover;
+  }
+}
+
+.description-box {
+  background: $panel;
+  border-radius: 12px;
+  padding: 14px;
+
+  .desc-title {
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin: 0 0 8px;
+    color: $text;
+  }
+
+  .desc-text {
+    font-size: 0.78rem;
+    color: #cccccc;
+    line-height: 1.5;
+    margin: 0;
+  }
+}
+
+/* ── Right column ───────────────────────────────── */
+.col-right {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.coin-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0;
+  color: $text;
+}
+
+.coin-subtitle {
+  font-size: 0.8rem;
+  color: $muted;
+  margin: 0;
+}
+
+.price-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  .price {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: $gold;
+  }
+
+  .badge {
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 600;
+  }
+
+  .badge-green { background: $green; color: #fff; }
+  .badge-gold  { background: $gold;  color: #000; }
+}
+
+/* ── Table ──────────────────────────────────────── */
+.details-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+
+  tr:nth-child(odd)  { background: #222; }
+  tr:nth-child(even) { background: $panel; }
+
+  td { padding: 8px 12px; }
+
+  .td-label {
+    color: $muted;
+    width: 40%;
+    font-weight: 500;
+  }
+
+  .td-value {
+    color: $text;
+    font-weight: 600;
+  }
+}
+
+/* ── Seller row ─────────────────────────────────── */
+.seller-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: $panel;
+  border-radius: 10px;
+  padding: 10px 14px;
+
+  .seller-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: $gold;
+    color: #000;
+    font-weight: 700;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .seller-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 2px;
+
+    .seller-name   { font-size: 0.82rem; font-weight: 700; }
+    .seller-rating { font-size: 0.7rem;  color: $muted; }
+  }
+
+  .btn-message {
+    --border-color: #{$text};
+    --color: #{$text};
+    --border-radius: 8px;
+    height: 34px;
+    font-size: 0.75rem;
+    flex-shrink: 0;
+  }
+}
+
+/* ── Action buttons ─────────────────────────────── */
+.btn-action {
+  --border-radius: 10px;
+  height: 46px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.btn-buy {
+  --background: #{$gold};
+  --color: #000;
+}
+
+.btn-trade, .btn-fav {
+  --border-color: #{$text};
+  --color: #{$text};
+}
+
+

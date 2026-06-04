@@ -1,15 +1,24 @@
-import { Component, Input } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonButtons, IonButton } from '@ionic/angular/standalone';
+import { Component } from '@angular/core';
+import {
+  IonFooter,
+  IonTabBar,
+  IonTabButton,
+  IonIcon,
+  IonLabel,
+} from '@ionic/angular/standalone';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { addIcons } from 'ionicons';
+import { home, book, cart, cash, chatbox, star } from 'ionicons/icons';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [IonHeader, IonToolbar, IonTitle, IonButtons, IonButton, RouterLink, RouterLinkActive],
+  imports: [IonFooter, IonTabBar, IonTabButton, IonIcon, IonLabel, RouterLink, RouterLinkActive],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  @Input() title: string = 'NumisMarket';
+  constructor() {
+    addIcons({ home, book, cart, cash, chatbox, star });
+  }
 }
-  
