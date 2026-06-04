@@ -7,7 +7,8 @@
   flex-direction: column;
   padding: 16px;
   gap: 16px;
-
+  height: fit-content;
+  margin-bottom: 50px;
 }
 
 /* --- Box 1: Header row --- */
@@ -17,8 +18,8 @@
   align-items: center;
   justify-content: space-between;
 
-  h2 {
-    font-size: 1.25rem;
+  h1 {
+    font-size: 1.75rem;
     font-weight: 700;
     margin: 0;
     flex: 1;
