@@ -12,7 +12,7 @@
         </ion-button>
         <ion-button class="bt-b" fill="outline" (click)="abrirAlerta()">
           <img src="../../assets/icon/add_alert_24dp_03A125_FILL0_wght400_GRAD0_opsz24.svg">
-          <span style="white-space: nowrap;">Criar alerta</span>
+          <span style="white-space: nowrap;" (click)="abrirAlerta()">Criar alerta</span>
         </ion-button>
       </div>
     </div>
@@ -20,6 +20,7 @@
     <!-- Box 2: Filters -->
     <div id="Box-2">
 
+      <!-- Row 1: three filter selects -->
       <div class="filters-row">
 
         <div class="filter-col">
@@ -55,6 +56,7 @@
 
       </div>
 
+      <!-- Row 2: search -->
       <div class="filters-search-row">
         <div class="filter-col filter-col--search">
           <span class="filter-label">Pesquisar</span>
@@ -69,19 +71,23 @@
     <!-- Box 3: Results -->
     <div id="Box-3">
 
+      <!-- Loading state -->
       <div *ngIf="isLoading" class="state-center">
         <ion-spinner name="crescent"></ion-spinner>
         <ion-text color="medium"><p>A carregar moedas...</p></ion-text>
       </div>
 
+      <!-- Error state -->
       <div *ngIf="!isLoading && errorMsg" class="state-center">
         <ion-text color="danger"><p>{{ errorMsg }}</p></ion-text>
       </div>
 
+      <!-- Empty state -->
       <div *ngIf="!isLoading && !errorMsg && coins.length === 0" class="state-center">
         <ion-text color="medium"><p>Nenhuma moeda encontrada.</p></ion-text>
       </div>
 
+      <!-- Coin cards grid -->
       <div *ngIf="!isLoading && coins.length > 0" class="cards-grid">
         <app-card
           *ngFor="let coin of coins"
