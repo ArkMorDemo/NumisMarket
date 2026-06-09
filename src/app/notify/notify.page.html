@@ -117,12 +117,7 @@
         </section>
  
         <aside class="actions">
-          <ion-toggle
-            [checked]="a.ativo"
-            (ionChange)="toggleAtivo(a)"
-            color="warning">
-          </ion-toggle>
-          <button class="btn-edit" (click)="editar(a)">Editar</button>
+          <button class="btn-edit"  routerLink="/details/1">ir para alerta</button>
           <button class="btn-remove" (click)="remover(a.id!)">Remover</button>
         </aside>
  

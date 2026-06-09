@@ -286,5 +286,14 @@
     "type": "comemorativa",
     "era": "contemporanea",
     "qualities": ["País: Reino Unido", "Ano: 2003", "Material: Bimetálico", "Diâmetro: 28.4mm", "Peso: 12g"]
+  },
+   {
+    "id": "1",
+    "name": "escudo ingles",
+    "image": "assets/img/Coin.png",
+    "country": "uk",
+    "type": "prova",
+    "era": "moderna",
+    "qualities": ["País: Inglaterra", "Ano: 1900", "Material: Ouro", "Diâmetro: 22mm", "Peso: 8g"]
   }
 ]

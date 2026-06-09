@@ -16,6 +16,7 @@ import { HeaderComponent } from '../components/header/header.component';
 import { FooterComponent } from '../components/footer/footer.component';
 import { AlertModalComponent } from '../components/alert-modal/alert-modal.component';
 import { AlertaService, AlertaMoeda } from '../services/alerta';
+import {  RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-notify',
@@ -28,6 +29,7 @@ import { AlertaService, AlertaMoeda } from '../services/alerta';
     IonContent,
     IonIcon,
     IonToggle,
+    RouterLink,
     HeaderComponent,
     FooterComponent,
   ],
