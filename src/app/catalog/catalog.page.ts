@@ -113,7 +113,7 @@ export class CatalogPage implements OnInit, OnDestroy {
   loadMoedas() {
         this.http.get<Moeda[]>('assets/data/coin.json').subscribe({
           next: (data) => {
-            this.moedas = data.slice(9, 12);
+            this.moedas = data;
             
           },
           error: (err) => {
@@ -154,8 +154,8 @@ export class CatalogPage implements OnInit, OnDestroy {
     });
   }
 
-  onCardAction(coin: Coin): void {
-    this.router.navigate(['/details', coin.id]);
+  onCardAction(moeda: Moeda): void {
+    this.router.navigate(['/details', moeda.id]);
   }
 
   async abrirAlerta(): Promise<void> {
