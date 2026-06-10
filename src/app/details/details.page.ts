@@ -3,7 +3,7 @@ import { CommonModule, Location } from '@angular/common';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { addIcons } from 'ionicons';
-import { chatbubbleOutline } from 'ionicons/icons';
+import { chatbubbleOutline, closeOutline } from 'ionicons/icons';
 import {
   IonContent, IonButton, IonSpinner, IonText, IonIcon
 } from '@ionic/angular/standalone';
@@ -44,8 +44,9 @@ export class DetailsPage implements OnInit {
     private http: HttpClient,
     private location: Location
   ) {
-    addIcons({ chatbubbleOutline });
+    addIcons({ chatbubbleOutline, 'close-outline': closeOutline, });
   }
+  
 
   ngOnInit(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
