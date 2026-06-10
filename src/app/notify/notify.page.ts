@@ -10,7 +10,7 @@ import {
   AlertController,
 } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { notifications, arrowUndo, notificationsOutline } from 'ionicons/icons';
+import { notifications, arrowUndo, notificationsOutline, closeOutline } from 'ionicons/icons';
 
 import { HeaderComponent } from '../components/header/header.component';
 import { FooterComponent } from '../components/footer/footer.component';
@@ -44,7 +44,7 @@ export class NotifyPage implements OnInit {
     private alertCtrl: AlertController,
     private router: Router,
   ) {
-    addIcons({ notifications, arrowUndo, notificationsOutline });
+    addIcons({ notifications, arrowUndo, notificationsOutline, 'close-outline': closeOutline });
   }
 
   ngOnInit() { this.carregar(); }
