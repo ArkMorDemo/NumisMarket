@@ -90,12 +90,13 @@
       <!-- Coin cards grid -->
       <div *ngIf="!isLoading && coins.length > 0" class="cards-grid">
         <app-card
-          *ngFor="let coin of coins"
-          [name]="coin.name"
-          [image]="coin.image"
-          [qualities]="coin.qualities"
+          *ngFor="let moeda of moedas"
+          [name]="moeda.nome"
+          [image]="moeda.imagem_url"
+          [qualities]="[moeda.material, moeda.pais, moeda.ano + '']"
           [buttonText]="'Ver detalhe'"
-          (buttonClicked)="onCardAction(coin)">
+          (buttonClicked)="onCardAction(moeda)">
+          //(buttonClicked)="onCardAction(coin)">
         </app-card>
       </div>
 

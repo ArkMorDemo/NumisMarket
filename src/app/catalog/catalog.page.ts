@@ -22,6 +22,18 @@ import { CardComponent } from '../components/card/card.component';
 import { AlertModalComponent } from '../components/alert-modal/alert-modal.component';
 import { CoinService } from '../services/coin.service';
 import { Coin } from '../models/coin.model';
+import { HttpClient } from '@angular/common/http';
+
+export interface Moeda {
+  id: number;
+  nome: string;
+  preco_euros: number;
+  estado: string;
+  material: string;
+  ano: number;
+  pais: string;
+  imagem_url: string;
+}
 
 @Component({
   selector: 'app-catalog',
@@ -49,6 +61,7 @@ import { Coin } from '../models/coin.model';
 export class CatalogPage implements OnInit, OnDestroy {
 
   coins: Coin[] = [];
+  moedas: Moeda[] = [];
   isLoading = false;
   errorMsg: string | null = null;
 
@@ -69,12 +82,15 @@ export class CatalogPage implements OnInit, OnDestroy {
   private subs = new Subscription();
 
   constructor(
+    private http: HttpClient,
     private coinService: CoinService,
     private router: Router,
     private modalCtrl: ModalController
+   
   ) {}
 
   ngOnInit(): void {
+    this.loadMoedas();
     this.subs.add(
       this.coinService.getLoading().subscribe(v => this.isLoading = v)
     );
@@ -93,6 +109,18 @@ export class CatalogPage implements OnInit, OnDestroy {
       this.coinService.loadCoins().subscribe()
     );
   }
+
+  loadMoedas() {
+        this.http.get<Moeda[]>('assets/data/coin.json').subscribe({
+          next: (data) => {
+            this.moedas = data.slice(9, 12);
+            
+          },
+          error: (err) => {
+            console.error('Erro ao carregar o ficheiro de moedas:', err);
+          }
+        });
+      }
 
   ngOnDestroy(): void {
     this.subs.unsubscribe();

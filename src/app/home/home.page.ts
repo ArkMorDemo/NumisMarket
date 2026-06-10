@@ -5,6 +5,19 @@ import { FooterComponent } from 'src/app/components/footer/footer.component';
 import { CardComponent } from 'src/app/components/card/card.component';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+
+export interface Moeda {
+  id: number;
+  nome: string;
+  preco_euros: number;
+  estado: string;
+  material: string;
+  ano: number;
+  pais: string;
+  imagem_url: string;
+}
+
 
 @Component({
   selector: 'app-home',
@@ -15,26 +28,9 @@ import { RouterLink } from '@angular/router';
 })
 export class HomePage implements OnInit, OnDestroy {
 
-  cards = [
-    {
-      name: 'Product 1',
-      image: '../../assets/img/Coin.png',
-      qualities: ['High Quality', 'Durable', 'Eco-friendly'],
-      buttonText: 'Comprar'
-    },
-    {
-      name: 'Product 2',
-      image: '../../assets/img/Coin.png',
-      qualities: ['Fast Shipping', 'Warranty', 'Customer Support'],
-      buttonText: 'Comprar'
-    },
-    {
-      name: 'Product 3',
-      image: '../../assets/img/Coin.png',
-      qualities: ['Premium', 'Exclusive', 'Limited Edition'],
-      buttonText: 'Comprar'
-    }
-  ];
+  moedas: Moeda[] = [];
+
+  
 
   activeCard = 0;
   private sliderInterval: any;
@@ -42,8 +38,20 @@ export class HomePage implements OnInit, OnDestroy {
   private readonly SWIPE_THRESHOLD = 50;
 
   ngOnInit() {
-    this.startSlider();
+     this.loadMoedas();
   }
+
+  loadMoedas() {
+      this.http.get<Moeda[]>('assets/data/coin.json').subscribe({
+        next: (data) => {
+          this.moedas = data.slice(9, 12);
+          this.startSlider();
+        },
+        error: (err) => {
+          console.error('Erro ao carregar o ficheiro de moedas:', err);
+        }
+      });
+    }
 
   ngOnDestroy() {
     this.stopSlider();
@@ -51,7 +59,7 @@ export class HomePage implements OnInit, OnDestroy {
 
   startSlider() {
     this.sliderInterval = setInterval(() => {
-      this.activeCard = (this.activeCard + 1) % this.cards.length;
+      this.activeCard = (this.activeCard + 1) % this.moedas.length;
     }, 15000);
   }
 
@@ -94,12 +102,14 @@ export class HomePage implements OnInit, OnDestroy {
     if (Math.abs(deltaX) < this.SWIPE_THRESHOLD) return;
     if (deltaX < 0) {
       // Swiped left → next card
-      this.goToCard((this.activeCard + 1) % this.cards.length);
+      this.goToCard((this.activeCard + 1) % this.moedas.length);
     } else {
       // Swiped right → previous card
-      this.goToCard((this.activeCard - 1 + this.cards.length) % this.cards.length);
+      this.goToCard((this.activeCard - 1 + this.moedas.length) % this.moedas.length);
     }
   }
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
+
+  
 }
