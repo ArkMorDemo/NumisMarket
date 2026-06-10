@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule, Location } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { addIcons } from 'ionicons';
 import { chatbubbleOutline } from 'ionicons/icons';
@@ -28,7 +28,7 @@ export interface Moeda {
   styleUrls: ['./details.page.scss'],
   standalone: true,
   imports: [CommonModule, IonContent, IonButton, IonSpinner, IonText, IonIcon,
-            HeaderComponent, FooterComponent]
+            HeaderComponent,RouterLink,  FooterComponent]
 })
 export class DetailsPage implements OnInit {
 

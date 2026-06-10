@@ -1,6 +1,10 @@
 <app-header></app-header>
 
 <ion-content [fullscreen]="true">
+  <ion-button fill="clear" routerLink="/catalog" class="btn-back">
+  ← Voltar ao catálogo
+</ion-button>
+
   <div *ngIf="isLoading" class="state-center">
     <ion-spinner name="crescent"></ion-spinner>
   </div>
