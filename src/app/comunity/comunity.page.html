@@ -1,10 +1,11 @@
 <app-header></app-header>
 
 <ion-content color="black-bg" class="ion-padding">
+  <h1>Conversas</h1>
   
   <div class="header-container ion-margin-bottom">
     <ion-searchbar 
-      placeholder="Buscar producto" 
+      placeholder="Buscar conversa" 
       class="custom-searchbar"
       search-icon="search-outline"
       mode="md">
@@ -16,8 +17,6 @@
       </ion-button>
     </div>
   </div>
-
-  <h2 class="section-title">Conversations</h2>
 
   <ion-list lines="none" class="transparent-list">
     <ion-item *ngFor="let chat of conversations" class="chat-item">

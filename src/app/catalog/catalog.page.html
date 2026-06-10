@@ -37,9 +37,10 @@
           <ion-select [(ngModel)]="selectedType" (ionChange)="onTypeChange($event)"
                       placeholder="Todos" interface="popover" class="filter-select">
             <ion-select-option value="">Todos</ion-select-option>
-            <ion-select-option value="comum">Comum</ion-select-option>
-            <ion-select-option value="comemorativa">Comemorativa</ion-select-option>
-            <ion-select-option value="prova">Prova</ion-select-option>
+            <ion-select-option value="Bronze">Bronze</ion-select-option>
+            <ion-select-option value="Prata">Prata</ion-select-option>
+            <ion-select-option value="Ouro">Ouro</ion-select-option>
+            <ion-select-option value="Bimetálica">Bimetálica</ion-select-option>
           </ion-select>
         </div>
 
@@ -83,19 +84,17 @@
       </div>
 
       <!-- Empty state -->
-      <div *ngIf="!isLoading && !errorMsg && coins.length === 0" class="state-center">
-        <ion-text color="medium"><p>Nenhuma moeda encontrada.</p></ion-text>
+      <div *ngIf="!isLoading && !errorMsg && moedasFiltradas.length === 0" class="state-center">
+        <ion-text color="medium">
+          <p>Nenhuma moeda encontrada.</p>
+        </ion-text>
       </div>
 
       <!-- Coin cards grid -->
-      <div *ngIf="!isLoading && coins.length > 0" class="cards-grid">
-        <app-card
-          *ngFor="let coin of coins"
-          [name]="coin.name"
-          [image]="coin.image"
-          [qualities]="coin.qualities"
-          [buttonText]="'Ver detalhe'"
-          (buttonClicked)="onCardAction(coin)">
+      <div *ngIf="!isLoading && moedasFiltradas.length > 0" class="cards-grid">
+        <app-card *ngFor="let moeda of moedasFiltradas" [name]="moeda.nome" [image]="moeda.imagem_url"
+          [qualities]="[moeda.material, moeda.pais, moeda.ano + '']" [buttonText]="'Ver detalhe'"
+          (buttonClicked)="onCardAction(moeda)">
         </app-card>
       </div>
 

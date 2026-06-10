@@ -35,7 +35,7 @@ $green: #03A125;
 }
 
 .main-image-wrap {
-  background: $panel;
+  background: $text;
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -55,11 +55,11 @@ $green: #03A125;
     flex: 1;
     aspect-ratio: 1;
     object-fit: contain;
-    background: $panel;
+    background: $text;
     border-radius: 8px;
     padding: 6px;
     cursor: pointer;
-    border: 2px solid transparent;
+    border: 4px solid transparent;
     transition: border-color 0.2s;
 
     &:hover { border-color: $gold; }
@@ -213,9 +213,16 @@ $green: #03A125;
   --color: #000;
 }
 
-.btn-trade, .btn-fav {
+.btn-trade, .btn-fav, .btn-back {
   --border-color: #{$text};
   --color: #{$text};
+}
+
+/* ── Mobile footer fix ──────────────────────────── */
+@media (max-width: 680px) {
+  .details-container {
+    padding-bottom: 80px; 
+  }
 }
 
 

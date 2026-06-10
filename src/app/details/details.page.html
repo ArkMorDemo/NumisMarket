@@ -1,30 +1,35 @@
 <app-header></app-header>
 
 <ion-content [fullscreen]="true">
+  <ion-button fill="clear" routerLink="/catalog" class="btn-back">
+    <ion-icon name="close-outline"></ion-icon>
+  </ion-button>
+
+
   <div *ngIf="isLoading" class="state-center">
     <ion-spinner name="crescent"></ion-spinner>
   </div>
 
-  <div *ngIf="!isLoading && !coin" class="state-center">
+  <div *ngIf="!isLoading && !moeda" class="state-center">
     <ion-text color="medium"><p>Moeda não encontrada.</p></ion-text>
   </div>
 
-  <div *ngIf="!isLoading && coin" class="details-container">
+  <div *ngIf="!isLoading && moeda" class="details-container">
 
     <!-- LEFT COLUMN -->
     <div class="col-left">
 
       <!-- Main image -->
       <div class="main-image-wrap">
-        <img [src]="selectedImage" [alt]="coin!.name" class="main-image" />
+        <img [src]="selectedImage" [alt]="moeda!.nome" class="main-image" />
       </div>
 
       <!-- Thumbnails -->
       <div class="thumbnails">
         <img
-          *ngFor="let t of [coin!.image, coin!.image, coin!.image]"
+          *ngFor="let t of [moeda!.imagem_url, moeda!.imagem_url, moeda!.imagem_url]"
           [src]="t"
-          [alt]="coin!.name"
+          [alt]="moeda!.nome"
           class="thumb"
           (click)="selectImage(t)" />
       </div>
@@ -44,14 +49,14 @@
     <div class="col-right">
 
       <!-- Title -->
-      <h1 class="coin-title">{{ coin!.name }}</h1>
+      <h1 class="coin-title">{{ moeda!.nome }}</h1>
       <p class="coin-subtitle">{{ subtitle }}</p>
 
       <!-- Price + badges -->
       <div class="price-row">
-        <span class="price">{{ price }}</span>
+        <span class="price">{{ moeda!.preco_euros }} €</span>
         <span class="badge badge-green">Venda</span>
-        <span class="badge badge-gold">{{ coin!.type === 'comemorativa' ? 'MBC' : coin!.type === 'prova' ? 'PF' : 'BC' }}</span>
+        <span class="badge badge-gold">{{ moeda!.estado }}</span>
       </div>
 
       <!-- Details table -->

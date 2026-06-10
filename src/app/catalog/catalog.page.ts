@@ -13,15 +13,24 @@ import {
   IonInput,
   ModalController,
 } from '@ionic/angular/standalone';
-import { Subscription } from 'rxjs';
 import { Router, RouterLink } from '@angular/router';
 
 import { HeaderComponent } from '../components/header/header.component';
 import { FooterComponent } from '../components/footer/footer.component';
 import { CardComponent } from '../components/card/card.component';
 import { AlertModalComponent } from '../components/alert-modal/alert-modal.component';
-import { CoinService } from '../services/coin.service';
-import { Coin } from '../models/coin.model';
+import { HttpClient } from '@angular/common/http';
+
+export interface Moeda {
+  id: number;
+  nome: string;
+  preco_euros: number;
+  estado: string;
+  material: string;
+  ano: number;
+  pais: string;
+  imagem_url: string;
+}
 
 @Component({
   selector: 'app-catalog',
@@ -46,9 +55,10 @@ import { Coin } from '../models/coin.model';
     CardComponent,
   ],
 })
-export class CatalogPage implements OnInit, OnDestroy {
+export class CatalogPage implements OnInit {
 
-  coins: Coin[] = [];
+  moedas: Moeda[] = [];
+  moedasFiltradas: Moeda[] = [];
   isLoading = false;
   errorMsg: string | null = null;
 
@@ -58,76 +68,87 @@ export class CatalogPage implements OnInit, OnDestroy {
   searchName = '';
 
   readonly countries = [
-    { id: 'pt', name: 'Portugal' },
-    { id: 'br', name: 'Brasil' },
-    { id: 'es', name: 'Espanha' },
-    { id: 'fr', name: 'França' },
-    { id: 'de', name: 'Alemanha' },
-    { id: 'uk', name: 'Reino Unido' },
-  ];
-
-  private subs = new Subscription();
+  { id: 'Portugal',        name: 'Portugal' },
+  { id: 'Brasil',          name: 'Brasil' },
+  { id: 'Espanha',         name: 'Espanha' },
+  { id: 'França',          name: 'França' },
+  { id: 'Alemanha',        name: 'Alemanha' },
+  { id: 'Reino Unido',     name: 'Reino Unido' },
+  { id: 'Estados Unidos',  name: 'Estados Unidos' },
+  { id: 'Itália',          name: 'Itália' },
+  { id: 'África do Sul',   name: 'África do Sul' },
+];
 
   constructor(
-    private coinService: CoinService,
+    private http: HttpClient,
     private router: Router,
-    private modalCtrl: ModalController
+    private modalCtrl: ModalController,
   ) {}
 
   ngOnInit(): void {
-    this.subs.add(
-      this.coinService.getLoading().subscribe(v => this.isLoading = v)
-    );
-
-    this.subs.add(
-      this.coinService.getError().subscribe(v => this.errorMsg = v)
-    );
-
-    this.subs.add(
-      this.coinService.getFilteredCoins().subscribe(
-        coins => this.coins = coins
-      )
-    );
-
-    this.subs.add(
-      this.coinService.loadCoins().subscribe()
-    );
+    this.loadMoedas();
   }
 
-  ngOnDestroy(): void {
-    this.subs.unsubscribe();
+  loadMoedas(): void {
+    this.isLoading = true;
+    this.http.get<Moeda[]>('assets/data/coin.json').subscribe({
+      next: (data) => {
+        this.moedas = data;
+        this.moedasFiltradas = data;
+        this.isLoading = false;
+      },
+      error: (err) => {
+        this.errorMsg = 'Erro ao carregar moedas.';
+        this.isLoading = false;
+        console.error('Erro ao carregar o ficheiro de moedas:', err);
+      }
+    });
+  }
+
+  aplicarFiltros(): void {
+    const pais   = this.selectedCountry.toLowerCase();
+    const tipo   = this.selectedType.toLowerCase();
+    const epoca  = this.selectedEra.toLowerCase();
+    const search = this.searchName.toLowerCase();
+
+    this.moedasFiltradas = this.moedas.filter(m => {
+      const matchPais   = !pais   || m.pais.toLowerCase().includes(pais);
+      const matchTipo   = !tipo   || m.material.toLowerCase() === tipo;
+      const matchEpoca  = !epoca  || this.getEpoca(m.ano) === epoca;
+      const matchSearch = !search || m.nome.toLowerCase().includes(search)
+                                  || String(m.ano).includes(search);
+      return matchPais && matchTipo && matchEpoca && matchSearch;
+    });
+  }
+
+  getEpoca(ano: number): string {
+    if (ano >= 1900) return 'contemporanea';
+    if (ano >= 1500) return 'moderna';
+    return 'antiga';
   }
 
   onCountryChange(event: any): void {
     this.selectedCountry = event.detail.value;
-    this.coinService.setFilters({
-      country: this.selectedCountry
-    });
+    this.aplicarFiltros();
   }
 
   onTypeChange(event: any): void {
     this.selectedType = event.detail.value;
-    this.coinService.setFilters({
-      type: this.selectedType
-    });
+    this.aplicarFiltros();
   }
 
   onEraChange(event: any): void {
     this.selectedEra = event.detail.value;
-    this.coinService.setFilters({
-      era: this.selectedEra
-    });
+    this.aplicarFiltros();
   }
 
   onSearchName(event: any): void {
     this.searchName = event.detail?.value ?? '';
-    this.coinService.setFilters({
-      name: this.searchName
-    });
+    this.aplicarFiltros();
   }
 
-  onCardAction(coin: Coin): void {
-    this.router.navigate(['/details', coin.id]);
+  onCardAction(moeda: Moeda): void {
+    this.router.navigate(['/details', moeda.id]);
   }
 
   async abrirAlerta(): Promise<void> {
@@ -135,7 +156,6 @@ export class CatalogPage implements OnInit, OnDestroy {
       component: AlertModalComponent,
       cssClass: 'alerta-modal',
     });
-
     await modal.present();
   }
 }

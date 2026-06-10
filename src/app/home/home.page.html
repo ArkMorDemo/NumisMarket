@@ -24,19 +24,19 @@
       (touchend)="onTouchEnd($event)"
       (mousedown)="onMouseDown($event)"
       (mouseup)="onMouseUp($event)">
-      <div class="card-slide" *ngFor="let card of cards; let i = index" [class.active]="i === activeCard">
+      <div class="card-slide" *ngFor="let moeda of moedas; let i = index" [class.active]="i === activeCard">
         <app-card
-          [name]="card.name"
-          [image]="card.image"
-          [qualities]="card.qualities"
-          [buttonText]="card.buttonText"
-          (buttonClicked)="onCardButtonClick(card.name)">
+          [name]="moeda.nome"
+          [image]="moeda.imagem_url"
+          [qualities]="[moeda.material, moeda.pais, moeda.ano + '']"
+          [buttonText]="'Comprar'"
+          (buttonClicked)="onCardButtonClick(moeda.nome)">
         </app-card>
       </div>
 
       <div class="slider-dots">
         <span
-          *ngFor="let card of cards; let i = index"
+          *ngFor="let moeda of moedas; let i = index"
           class="dot"
           [class.active]="i === activeCard"
           (click)="goToCard(i)">
