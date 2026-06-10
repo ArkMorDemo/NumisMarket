@@ -5,6 +5,9 @@
   <section class="container">
  
     <header class="top-bar">
+       <button class="btn-return" (click)="voltar()">
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
       <h1 class="page-title">Os meus alertas</h1>
       <button class="btn-criar" (click)="criarAlerta()">
         <ion-icon name="notifications"></ion-icon>
@@ -26,10 +29,6 @@
         [class.active]="abaAtiva === 'notificacoes'"
         (click)="abaAtiva = 'notificacoes'">
         Notificações
-      </button>
-      <button class="btn-return" (click)="voltar()">
-        <ion-icon name="arrow-undo"></ion-icon>
-        Voltar
       </button>
     </nav>
  
